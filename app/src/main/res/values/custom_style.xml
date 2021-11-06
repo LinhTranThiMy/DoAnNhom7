@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="RoundedRectangle">
+        <item name="cornerSize">25%</item>
+    </style>
+
+    <style name="CommentBackground">
+        <item name="backgroundTint">#F4F2F2</item>
+    </style>
+
+</resources>
