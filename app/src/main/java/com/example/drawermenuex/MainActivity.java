@@ -46,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
                             replaceFragment(new HomeFragment());
                             CurrentFragment=FRAGMENT_HOME;
                             bottomNavigationView.getMenu().findItem(R.id.home).setChecked(true);
+                            navigationbarmain.getMenu().findItem(R.id.txtHome).setChecked(true);
                         }
                         break;
                     case R.id.search:
