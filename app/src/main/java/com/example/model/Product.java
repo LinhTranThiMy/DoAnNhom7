@@ -4,11 +4,15 @@ public class Product {
     private int ProductThumb;
     private String ProductName;
     private double ProductPrice;
+    private Float ProductRating;
+    private String ProductRatingNumber;
 
-    public Product(int productThumb, String productName, double productPrice) {
+    public Product(int productThumb, String productName, double productPrice, Float productRating, String productRatingNumber) {
         ProductThumb = productThumb;
         ProductName = productName;
         ProductPrice = productPrice;
+        ProductRating = productRating;
+        ProductRatingNumber = productRatingNumber;
     }
 
     public int getProductThumb() {
@@ -33,5 +37,21 @@ public class Product {
 
     public void setProductPrice(double productPrice) {
         ProductPrice = productPrice;
+    }
+
+    public Float getProductRating() {
+        return ProductRating;
+    }
+
+    public void setProductRating(Float productRating) {
+        ProductRating = productRating;
+    }
+
+    public String getProductRatingNumber() {
+        return ProductRatingNumber;
+    }
+
+    public void setProductRatingNumber(String productRatingNumber) {
+        ProductRatingNumber = productRatingNumber;
     }
 }

@@ -28,18 +28,18 @@ public class IphoneCaseFragment extends Fragment {
 
 
         IphoneCases = new ArrayList<Product>();
-        IphoneCases.add(new Product(R.drawable.case1, "CUSTOM CASE",190000));
-        IphoneCases.add(new Product(R.drawable.case2, "CUSTOM CASE",190000));
-        IphoneCases.add(new Product(R.drawable.case3, "CUSTOM CASE",190000));
-        IphoneCases.add(new Product(R.drawable.case4, "CUSTOM CASE",190000));
-        IphoneCases.add(new Product(R.drawable.case5, "CUSTOM CASE",190000));
-        IphoneCases.add(new Product(R.drawable.case1, "CUSTOM CASE",190000));
-        IphoneCases.add(new Product(R.drawable.case1, "CUSTOM CASE",190000));
-        IphoneCases.add(new Product(R.drawable.case2, "CUSTOM CASE",190000));
-        IphoneCases.add(new Product(R.drawable.case3, "CUSTOM CASE",190000));
-        IphoneCases.add(new Product(R.drawable.case4, "CUSTOM CASE",190000));
-        IphoneCases.add(new Product(R.drawable.case5, "CUSTOM CASE",190000));
-        IphoneCases.add(new Product(R.drawable.case1, "CUSTOM CASE",190000));
+        IphoneCases.add(new Product(R.drawable.case1, "CUSTOM CASE",190000,4F,"(12)"));
+        IphoneCases.add(new Product(R.drawable.case2, "CUSTOM CASE",190000,4F,"(12)"));
+        IphoneCases.add(new Product(R.drawable.case3, "CUSTOM CASE",190000,4F,"(12)"));
+        IphoneCases.add(new Product(R.drawable.case4, "CUSTOM CASE",190000,4F,"(12)"));
+        IphoneCases.add(new Product(R.drawable.case5, "CUSTOM CASE",190000,4F,"(12)"));
+        IphoneCases.add(new Product(R.drawable.case1, "CUSTOM CASE",190000,4F,"(12)"));
+        IphoneCases.add(new Product(R.drawable.case1, "CUSTOM CASE",190000,4F,"(12)"));
+        IphoneCases.add(new Product(R.drawable.case2, "CUSTOM CASE",190000,4F,"(12)"));
+        IphoneCases.add(new Product(R.drawable.case3, "CUSTOM CASE",190000,4F,"(12)"));
+        IphoneCases.add(new Product(R.drawable.case4, "CUSTOM CASE",190000,4F,"(12)"));
+        IphoneCases.add(new Product(R.drawable.case5, "CUSTOM CASE",190000,4F,"(12)"));
+        IphoneCases.add(new Product(R.drawable.case1, "CUSTOM CASE",190000,4F,"(12)"));
 
         adapterIphoneCase = new ProductAdapter(getActivity(),R.layout.item_products,IphoneCases);
         gvIphoneCases.setAdapter(adapterIphoneCase);

@@ -30,18 +30,18 @@ public class AllCaseFragment extends Fragment {
 
 
         AllCases = new ArrayList<Product>();
-        AllCases.add(new Product(R.drawable.case1, "CUSTOM CASE",190000));
-        AllCases.add(new Product(R.drawable.ipad8, "CUSTOM CASE",190000));
-        AllCases.add(new Product(R.drawable.macbook3, "CUSTOM CASE",190000));
-        AllCases.add(new Product(R.drawable.airpods5, "CUSTOM CASE",190000));
-        AllCases.add(new Product(R.drawable.case5, "CUSTOM CASE",190000));
-        AllCases.add(new Product(R.drawable.ipad4, "CUSTOM CASE",190000));
-        AllCases.add(new Product(R.drawable.macbook4, "CUSTOM CASE",190000));
-        AllCases.add(new Product(R.drawable.airpods9, "CUSTOM CASE",190000));
-        AllCases.add(new Product(R.drawable.case3, "CUSTOM CASE",190000));
-        AllCases.add(new Product(R.drawable.ipad5, "CUSTOM CASE",190000));
-        AllCases.add(new Product(R.drawable.airpods6, "CUSTOM CASE",190000));
-        AllCases.add(new Product(R.drawable.macbook2, "CUSTOM CASE",190000));
+        AllCases.add(new Product(R.drawable.case1, "CUSTOM CASE",190000, 5F,"(12)"));
+        AllCases.add(new Product(R.drawable.ipad8, "CUSTOM CASE",190000, 4F,"(12)"));
+        AllCases.add(new Product(R.drawable.macbook3, "CUSTOM CASE",190000,4F,"(12)"));
+        AllCases.add(new Product(R.drawable.airpods5, "CUSTOM CASE",190000,4F,"(12)"));
+        AllCases.add(new Product(R.drawable.case5, "CUSTOM CASE",190000,4F,"(12)"));
+        AllCases.add(new Product(R.drawable.ipad4, "CUSTOM CASE",190000,4F,"(12)"));
+        AllCases.add(new Product(R.drawable.macbook4, "CUSTOM CASE",190000,4F,"(12)"));
+        AllCases.add(new Product(R.drawable.airpods9, "CUSTOM CASE",190000,4F,"(12)"));
+        AllCases.add(new Product(R.drawable.case3, "CUSTOM CASE",190000,4F,"(12)"));
+        AllCases.add(new Product(R.drawable.ipad5, "CUSTOM CASE",190000,4F,"(12)"));
+        AllCases.add(new Product(R.drawable.airpods6, "CUSTOM CASE",190000,4F,"(12)"));
+        AllCases.add(new Product(R.drawable.macbook2, "CUSTOM CASE",190000,4F,"(12)"));
 
         adapterAllCase = new ProductAdapter(getActivity(),R.layout.item_products,AllCases);
         gvAllCases.setAdapter(adapterAllCase);

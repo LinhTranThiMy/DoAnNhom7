@@ -28,18 +28,18 @@ public class MacbookCaseFragment extends Fragment {
 
 
         MacbookCases = new ArrayList<Product>();
-        MacbookCases.add(new Product(R.drawable.macbook2, "CUSTOM CASE",190000));
-        MacbookCases.add(new Product(R.drawable.macbook3, "CUSTOM CASE",190000));
-        MacbookCases.add(new Product(R.drawable.macbook4, "CUSTOM CASE",190000));
-        MacbookCases.add(new Product(R.drawable.macbook5, "CUSTOM CASE",190000));
-        MacbookCases.add(new Product(R.drawable.macbook6, "CUSTOM CASE",190000));
-        MacbookCases.add(new Product(R.drawable.macbook7, "CUSTOM CASE",190000));
-        MacbookCases.add(new Product(R.drawable.macbook8, "CUSTOM CASE",190000));
-        MacbookCases.add(new Product(R.drawable.macbook2, "CUSTOM CASE",190000));
-        MacbookCases.add(new Product(R.drawable.macbook5, "CUSTOM CASE",190000));
-        MacbookCases.add(new Product(R.drawable.macbook4, "CUSTOM CASE",190000));
-        MacbookCases.add(new Product(R.drawable.macbook3, "CUSTOM CASE",190000));
-        MacbookCases.add(new Product(R.drawable.macbook7, "CUSTOM CASE",190000));
+        MacbookCases.add(new Product(R.drawable.macbook2, "CUSTOM CASE",190000,4F,"(12)"));
+        MacbookCases.add(new Product(R.drawable.macbook3, "CUSTOM CASE",190000,4F,"(12)"));
+        MacbookCases.add(new Product(R.drawable.macbook4, "CUSTOM CASE",190000,4F,"(12)"));
+        MacbookCases.add(new Product(R.drawable.macbook5, "CUSTOM CASE",190000,4F,"(12)"));
+        MacbookCases.add(new Product(R.drawable.macbook6, "CUSTOM CASE",190000,4F,"(12)"));
+        MacbookCases.add(new Product(R.drawable.macbook7, "CUSTOM CASE",190000,4F,"(12)"));
+        MacbookCases.add(new Product(R.drawable.macbook8, "CUSTOM CASE",190000,4F,"(12)"));
+        MacbookCases.add(new Product(R.drawable.macbook2, "CUSTOM CASE",190000,4F,"(12)"));
+        MacbookCases.add(new Product(R.drawable.macbook5, "CUSTOM CASE",190000,4F,"(12)"));
+        MacbookCases.add(new Product(R.drawable.macbook4, "CUSTOM CASE",190000,4F,"(12)"));
+        MacbookCases.add(new Product(R.drawable.macbook3, "CUSTOM CASE",190000,4F,"(12)"));
+        MacbookCases.add(new Product(R.drawable.macbook7, "CUSTOM CASE",190000,4F,"(12)"));
 
         adapterMacbookCase = new ProductAdapter(getActivity(),R.layout.item_products,MacbookCases);
         gvMacbookCases.setAdapter(adapterMacbookCase);

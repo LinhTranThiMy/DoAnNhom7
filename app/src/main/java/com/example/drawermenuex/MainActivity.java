@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
     int FRAGMENT_ACCESSORIES=4;
     int FRAGMENT_SEARCH=5;
     int FRAGMENT_CART=6;
-    int FRAGMENT_ACCOUNT=6;
+    int FRAGMENT_ACCOUNT=7;
     int CurrentFragment=FRAGMENT_HOME;
     Toolbar toolbarmain;
     DrawerLayout drawerLayoutmain;
@@ -134,8 +134,6 @@ public class MainActivity extends AppCompatActivity {
         replaceFragment(new HomeFragment());
         navigationbarmain.setCheckedItem(R.id.txtHome);
 
-
-
     }
 
     private void linkViews() {
@@ -151,7 +149,7 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle("");
 
-        toolbarmain.setNavigationIcon(android.R.drawable.ic_menu_sort_by_size);
+        toolbarmain.setNavigationIcon(R.drawable.ic_menu);
         toolbarmain.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

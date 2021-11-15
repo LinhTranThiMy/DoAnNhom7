@@ -30,18 +30,18 @@ public class IpadCaseFragment extends Fragment {
 
 
         IpadCases = new ArrayList<Product>();
-        IpadCases.add(new Product(R.drawable.ipad3, "CUSTOM CASE",190000));
-        IpadCases.add(new Product(R.drawable.ipad4, "CUSTOM CASE",190000));
-        IpadCases.add(new Product(R.drawable.ipad5, "CUSTOM CASE",190000));
-        IpadCases.add(new Product(R.drawable.ipad6, "CUSTOM CASE",190000));
-        IpadCases.add(new Product(R.drawable.ipad7, "CUSTOM CASE",190000));
-        IpadCases.add(new Product(R.drawable.ipad8, "CUSTOM CASE",190000));
-        IpadCases.add(new Product(R.drawable.ipad3, "CUSTOM CASE",190000));
-        IpadCases.add(new Product(R.drawable.ipad4, "CUSTOM CASE",190000));
-        IpadCases.add(new Product(R.drawable.ipad5, "CUSTOM CASE",190000));
-        IpadCases.add(new Product(R.drawable.ipad6, "CUSTOM CASE",190000));
-        IpadCases.add(new Product(R.drawable.ipad7, "CUSTOM CASE",190000));
-        IpadCases.add(new Product(R.drawable.ipad8, "CUSTOM CASE",190000));
+        IpadCases.add(new Product(R.drawable.ipad3, "CUSTOM CASE",190000,4F,"(12)"));
+        IpadCases.add(new Product(R.drawable.ipad4, "CUSTOM CASE",190000,4F,"(12)"));
+        IpadCases.add(new Product(R.drawable.ipad5, "CUSTOM CASE",190000,4F,"(12)"));
+        IpadCases.add(new Product(R.drawable.ipad6, "CUSTOM CASE",190000,4F,"(12)"));
+        IpadCases.add(new Product(R.drawable.ipad7, "CUSTOM CASE",190000,4F,"(12)"));
+        IpadCases.add(new Product(R.drawable.ipad8, "CUSTOM CASE",190000,4F,"(12)"));
+        IpadCases.add(new Product(R.drawable.ipad3, "CUSTOM CASE",190000,4F,"(12)"));
+        IpadCases.add(new Product(R.drawable.ipad4, "CUSTOM CASE",190000,4F,"(12)"));
+        IpadCases.add(new Product(R.drawable.ipad5, "CUSTOM CASE",190000,4F,"(12)"));
+        IpadCases.add(new Product(R.drawable.ipad6, "CUSTOM CASE",190000,4F,"(12)"));
+        IpadCases.add(new Product(R.drawable.ipad7, "CUSTOM CASE",190000,4F,"(12)"));
+        IpadCases.add(new Product(R.drawable.ipad8, "CUSTOM CASE",190000,4F,"(12)"));
 
         adapterIpadCase = new ProductAdapter(getActivity(),R.layout.item_products,IpadCases);
         gvIpadCases.setAdapter(adapterIpadCase);

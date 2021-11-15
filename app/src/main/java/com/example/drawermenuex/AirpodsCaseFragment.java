@@ -29,18 +29,18 @@ public class AirpodsCaseFragment extends Fragment {
 
 
         AirpodCases = new ArrayList<Product>();
-        AirpodCases.add(new Product(R.drawable.airpods6, "CUSTOM CASE",190000));
-        AirpodCases.add(new Product(R.drawable.airpods8, "CUSTOM CASE",190000));
-        AirpodCases.add(new Product(R.drawable.airpods4, "CUSTOM CASE",190000));
-        AirpodCases.add(new Product(R.drawable.airpods5, "CUSTOM CASE",190000));
-        AirpodCases.add(new Product(R.drawable.airpods9, "CUSTOM CASE",190000));
-        AirpodCases.add(new Product(R.drawable.airpods10, "CUSTOM CASE",190000));
-        AirpodCases.add(new Product(R.drawable.airpods11, "CUSTOM CASE",190000));
-        AirpodCases.add(new Product(R.drawable.airpods5, "CUSTOM CASE",190000));
-        AirpodCases.add(new Product(R.drawable.airpods9, "CUSTOM CASE",190000));
-        AirpodCases.add(new Product(R.drawable.airpods11, "CUSTOM CASE",190000));
-        AirpodCases.add(new Product(R.drawable.airpods6, "CUSTOM CASE",190000));
-        AirpodCases.add(new Product(R.drawable.airpods4, "CUSTOM CASE",190000));
+        AirpodCases.add(new Product(R.drawable.airpods6, "CUSTOM CASE",190000,4F,"(12)"));
+        AirpodCases.add(new Product(R.drawable.airpods8, "CUSTOM CASE",190000,4F,"(12)"));
+        AirpodCases.add(new Product(R.drawable.airpods4, "CUSTOM CASE",190000,4F,"(12)"));
+        AirpodCases.add(new Product(R.drawable.airpods5, "CUSTOM CASE",190000,4F,"(12)"));
+        AirpodCases.add(new Product(R.drawable.airpods9, "CUSTOM CASE",190000,4F,"(12)"));
+        AirpodCases.add(new Product(R.drawable.airpods10, "CUSTOM CASE",190000,4F,"(12)"));
+        AirpodCases.add(new Product(R.drawable.airpods11, "CUSTOM CASE",190000,4F,"(12)"));
+        AirpodCases.add(new Product(R.drawable.airpods5, "CUSTOM CASE",190000,4F,"(12)"));
+        AirpodCases.add(new Product(R.drawable.airpods9, "CUSTOM CASE",190000,4F,"(12)"));
+        AirpodCases.add(new Product(R.drawable.airpods11, "CUSTOM CASE",190000,4F,"(12)"));
+        AirpodCases.add(new Product(R.drawable.airpods6, "CUSTOM CASE",190000,4F,"(12)"));
+        AirpodCases.add(new Product(R.drawable.airpods4, "CUSTOM CASE",190000,4F,"(12)"));
 
         adapterAirpodCase = new ProductAdapter(getActivity(),R.layout.item_products,AirpodCases);
         gvAirpodCases.setAdapter(adapterAirpodCase);
