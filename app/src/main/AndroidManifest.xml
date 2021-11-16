@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.drawermenuex">
+    package="com.example.doannhom7">
 
     <application
         android:allowBackup="true"
@@ -8,16 +8,160 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.DrawerMenuEx">
+        android:theme="@style/Theme.DoAnNhom7">
         <activity
-            android:name=".MainActivity"
+            android:name=".Collection"
+            android:exported="true"/>
+
+        <activity
+            android:name=".AddCartAndBuy"
+            android:exported="true">
+
+        </activity>
+        <activity
+            android:name=".Product_Details"
+            android:exported="true"/>
+
+
+        <activity
+            android:name=".RateUs"
+            android:exported="true" >
+
+        </activity>
+        <activity
+            android:name=".Cancelled_OrderDetails"
+            android:exported="true" >
+
+
+        </activity>
+        <activity
+            android:name=".Processing_OrderDetails"
+            android:exported="true"/>
+
+        <activity
+            android:name=".Delivered_OrderDetails"
+            android:exported="true"/>
+
+
+        <activity
+            android:name=".Point"
+            android:exported="true">
+
+        </activity>
+        <activity
+            android:name=".Cancelled_Reason"
+            android:exported="true"/>
+
+
+        <activity
+            android:name=".MyOrders"
+            android:exported="true"/>
+
+
+        <activity
+            android:name=".Profile_Password2"
+            android:exported="true"/>
+
+        <activity
+            android:name=".Profile_Password1"
+            android:exported="true"/>
+
+        <activity
+            android:name=".Profile_MyAccount2"
+            android:exported="true"/>
+
+        <activity
+            android:name=".Profile_MyAccount1"
+            android:exported="true"/>
+
+        <activity
+            android:name=".Profile"
+            android:exported="true"/>
+
+        <activity
+            android:name=".Account"
+            android:exported="true"/>
+
+        <activity
+            android:name=".Filter"
+            android:exported="true">
+
+        </activity>
+
+        <activity
+            android:name=".Search"
+            android:exported="true"/>
+
+        <activity
+            android:name=".Confirmation"
+            android:exported="true"/>
+
+        <activity
+            android:name=".Checkout3"
+            android:exported="true">
+
+        </activity>
+        <activity
+            android:name=".Checkout2"
+            android:exported="true"/>
+
+        <activity
+            android:name=".Checkout"
+            android:exported="true">
+
+        </activity>
+        <activity
+            android:name=".Shopping_Cart"
+            android:exported="true"/>
+
+        <activity
+            android:name=".Shopping_Cart_Empty"
+            android:exported="true">
+
+        </activity>
+        <activity
+            android:name=".Product"
+            android:exported="true">
+
+        </activity>
+        <activity
+            android:name=".HomePage"
+            android:exported="true" />
+
+
+        <activity
+            android:name=".SignUp"
+            android:exported="true"/>
+
+        <activity
+            android:name=".ResetPassword"
+            android:exported="true"/>
+
+        <activity
+            android:name=".Verification"
+            android:exported="true"/>
+
+        <activity
+            android:name=".ForgotPassword"
+            android:exported="true"/>
+
+        <activity
+            android:name=".SplashScreen"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
+
             </intent-filter>
         </activity>
+        <activity
+            android:name=".Login"
+            android:exported="true"/>
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="true" />
     </application>
 
 </manifest>

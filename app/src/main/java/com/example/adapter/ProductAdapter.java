@@ -7,12 +7,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
-import android.widget.RatingBar;
 import android.widget.TextView;
 
+import com.example.doannhom7.R;
 import com.example.model.Product;
-import com.example.drawermenuex.R;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class ProductAdapter extends BaseAdapter {
@@ -52,8 +52,6 @@ public class ProductAdapter extends BaseAdapter {
             holder.imvProduct=convertView.findViewById(R.id.imvProduct);
             holder.txtProduct=convertView.findViewById(R.id.txtProductPrice);
             holder.txtProductPrice=convertView.findViewById(R.id.txtProductPrice);
-            holder.ratingBar=convertView.findViewById(R.id.Rating_bar_products);
-            holder.txtProductRatingNumber=convertView.findViewById(R.id.txtRatingNumber);
             convertView.setTag(holder);
         }
         else
@@ -64,14 +62,11 @@ public class ProductAdapter extends BaseAdapter {
         holder.imvProduct.setImageResource(p.getProductThumb());
         holder.txtProduct.setText(p.getProductName());
         holder.txtProductPrice.setText(String.valueOf(p.getProductPrice()));
-        holder.ratingBar.setRating(p.getProductRating());
-        holder.txtProductRatingNumber.setText(p.getProductRatingNumber());
         return convertView;
     }
 
     private class ViewHolder {
         ImageView imvProduct;
-        TextView txtProduct, txtProductPrice,txtProductRatingNumber;
-        RatingBar ratingBar;
+        TextView txtProduct, txtProductPrice;
     }
 }

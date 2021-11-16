@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#F9F7F7"
+        android:layout_margin="10dp">
+
+        <TextView
+            android:id="@+id/txttrack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="Tracking no."
+            android:textColor="#8F8F8F"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/txttrackNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/txttrack"
+            android:layout_toRightOf="@id/txttrack"
+            android:padding="10dp"
+            android:text="IW654384JJGF"
+            android:textColor="#000000"
+            android:textSize="15sp" />
+
+        <View
+            style="@style/Divider"
+            android:layout_below="@id/txttrack" />
+
+
+        <ImageView
+            android:id="@+id/imvcase"
+            android:layout_width="80dp"
+            android:layout_height="120dp"
+            android:layout_below="@id/txttrack"
+            android:layout_alignStart="@id/txttrack"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:src="@drawable/case1" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txttrack"
+            android:layout_alignBottom="@id/imvcase"
+            android:layout_toEndOf="@id/imvcase"
+            android:orientation="horizontal"
+            android:paddingTop="5dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="10dp">
+
+                <TextView
+                    android:id="@+id/txtName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="FLORAL CASE"
+                    android:textColor="@color/black"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/txtApple"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Apple"
+                    android:textColor="#B1B0B0"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/txtType"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="iPhone 13 Promax"
+                    android:textColor="#B1B0B0"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/txtQuantity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Quantity: 1" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linear2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:paddingTop="10dp">
+
+                <TextView
+                    android:id="@+id/txtStatus"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:text="Complete"
+                    android:paddingEnd="5dp"
+                    android:textColor="@color/red"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/txtPrice"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="bottom|right"
+                    android:text="150000"
+                    android:paddingEnd="5dp"
+                    android:paddingBottom="5dp"
+                    android:textColor="@color/black"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <View
+            android:id="@+id/view2"
+            style="@style/Divider"
+            android:layout_below="@id/imvcase" />
+
+        <ImageView
+            android:id="@+id/imvbag"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_below="@id/imvcase"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="5dp"
+            android:src="@drawable/ic_baseline_shopping_bag_24" />
+
+        <TextView
+            android:id="@+id/txtBought"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/imvcase"
+            android:layout_marginBottom="5dp"
+            android:layout_toEndOf="@id/imvbag"
+            android:paddingTop="5dp"
+            android:text="Bought 1 product"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/txtTotal"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/txtBought"
+            android:layout_marginTop="5dp"
+            android:layout_toRightOf="@id/txtBought"
+            android:gravity="end"
+            android:paddingTop="5dp"
+            android:paddingEnd="5dp"
+            android:text="Total: 320000"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <View
+            android:id="@+id/view3"
+            style="@style/Divider"
+            android:layout_below="@id/txtBought" />
+
+        <Button
+            android:id="@+id/btnDetails"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/btnreorder"
+            android:background="@android:color/transparent"
+            android:text="Details"
+            android:textColor="@color/red" />
+
+        <Button
+            android:id="@+id/btnreorder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txtTotal"
+            android:layout_alignRight="@id/txtTotal"
+            android:layout_marginTop="10dp"
+            android:backgroundTint="@color/red"
+            android:text="Re-order"
+            android:textColor="@color/white"
+            app:cornerRadius="20dp"
+            app:strokeColor="@color/red" />
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>
