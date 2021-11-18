@@ -45,6 +45,9 @@ public class AllCaseFragment extends Fragment {
 
         adapterAllCase = new ProductAdapter(getActivity(),R.layout.item_products,AllCases);
         gvAllCases.setAdapter(adapterAllCase);
+
+
+
         return view;
     }
 }
