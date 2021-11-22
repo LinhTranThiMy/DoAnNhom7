@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1068378986200",
+    "project_id": "login-cc740",
+    "storage_bucket": "login-cc740.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1068378986200:android:40a7e213d20354ef1d29ad",
+        "android_client_info": {
+          "package_name": "com.example.giaodienloginout"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1068378986200-69f5bgot8cphg1sjmpg3klpeh355v8f7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD-aCNk50uSj1vu_oJ1E_Ko1imIk0HgzdI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1068378986200-69f5bgot8cphg1sjmpg3klpeh355v8f7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
