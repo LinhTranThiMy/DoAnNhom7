@@ -20,71 +20,29 @@
             android:id="@+id/imvAvatar"
             android:layout_width="150dp"
             android:layout_height="150dp"
-            android:src="@drawable/anh"
+            android:src="@drawable/user"
             android:layout_gravity="center"
             android:layout_marginTop="20dp"/>
     </androidx.cardview.widget.CardView>
-    <Button
-        android:id="@+id/btnProfile"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:drawableLeft="@drawable/ic_baseline_person_outline_24"
-        android:drawableRight="@drawable/ic_baseline_chevron_right_24"
-        android:text="Profile"
-        android:backgroundTint="#E5E5E5"
-        android:textColor="@color/black"
-        android:textStyle="normal"
-        android:gravity="center_vertical"
-        android:layout_marginTop="20dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        />
-
-    <Button
-        android:id="@+id/btnPoints"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:drawableLeft="@drawable/ic_baseline_control_point_24"
-        android:drawableRight="@drawable/ic_baseline_chevron_right_24"
-        android:text="Accumulated point"
-        android:backgroundTint="#E5E5E5"
-        android:textColor="@color/black"
-        android:textStyle="normal"
-        android:gravity="center_vertical"
-        android:layout_marginTop="20dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        />
-    <Button
-        android:id="@+id/btnMyOther"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_marginTop="20dp"
-        android:backgroundTint="#E5E5E5"
-        android:drawableLeft="@drawable/ic_baseline_add_shopping_cart_24"
-        android:drawableRight="@drawable/ic_baseline_chevron_right_24"
-        android:gravity="center_vertical"
-        android:text="My order"
-        android:textColor="@color/black"
-        android:textStyle="normal"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"/>
-
-    <Button
-        android:id="@+id/btnLogOut"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:drawableLeft="@drawable/ic_baseline_login_24"
-        android:drawableRight="@drawable/ic_baseline_chevron_right_24"
-        android:text="Log out"
-        android:backgroundTint="#E5E5E5"
-        android:textColor="@color/black"
-        android:textStyle="normal"
-        android:gravity="center_vertical"
-        android:layout_marginTop="20dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        />
-
-
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp">
+        <TextView
+            android:id="@+id/txtLoginAccount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Login/"
+            android:textSize="18sp"
+            android:textStyle="bold"/>
+        <TextView
+            android:id="@+id/txtSignupAccount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sign up"
+            android:textSize="18sp"
+            android:textStyle="bold"/>
+    </LinearLayout>
 </LinearLayout>

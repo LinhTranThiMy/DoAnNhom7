@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager2.widget.ViewPager2;
 
@@ -22,6 +23,9 @@ public class AccessoriesFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_accessories, container, false);
+        //Hiện actionBar
+        ((AppCompatActivity) getActivity()).getSupportActionBar().show();
+
         tabLayoutAccesories=view.findViewById(R.id.tabLayoutAccesories);
         viewPagerAccesories=view.findViewById(R.id.viewPagerAccesories);
 

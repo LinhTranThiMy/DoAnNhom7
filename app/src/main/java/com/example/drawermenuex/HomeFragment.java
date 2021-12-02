@@ -2,6 +2,7 @@ package com.example.drawermenuex;
 
 import android.os.Bundle;
 
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -31,6 +32,9 @@ public class HomeFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.fragment_home, container, false);
+        //Hiện actionBar
+        ((AppCompatActivity) getActivity()).getSupportActionBar().show();
+
         rcvPopular = view.findViewById(R.id.rcvPopular);
         rcvBanner = view.findViewById(R.id.rcvBanner);
         rcvProducts=view.findViewById(R.id.rcvProducts);
