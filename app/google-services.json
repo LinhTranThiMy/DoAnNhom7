@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "722982976095",
+    "firebase_url": "https://fukiapp-default-rtdb.firebaseio.com",
+    "project_id": "fukiapp",
+    "storage_bucket": "fukiapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:722982976095:android:e0f28f87973890943af9ea",
+        "android_client_info": {
+          "package_name": "com.example.drawermenuex"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "722982976095-5qabs6tcmcbr0h1rh50v2fgg2fgg76i2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDUp2cmItJLnN4QCGgLBe4MuayH1Tkx7Ug"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "722982976095-5qabs6tcmcbr0h1rh50v2fgg2fgg76i2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

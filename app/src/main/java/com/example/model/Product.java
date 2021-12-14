@@ -1,57 +1,82 @@
 package com.example.model;
 
-public class Product {
-    private int ProductThumb;
-    private String ProductName;
-    private double ProductPrice;
-    private Float ProductRating;
-    private String ProductRatingNumber;
+import java.io.Serializable;
 
-    public Product(int productThumb, String productName, double productPrice, Float productRating, String productRatingNumber) {
-        ProductThumb = productThumb;
-        ProductName = productName;
-        ProductPrice = productPrice;
-        ProductRating = productRating;
-        ProductRatingNumber = productRatingNumber;
+public class Product implements Serializable {
+    private String productId;
+    private String productThumb;
+    private String productName;
+    private double productPrice;
+    private Float productRating;
+    private String productRatingNumber;
+    private String productDes;
+
+    public Product() {
     }
 
-    public int getProductThumb() {
-        return ProductThumb;
+    public Product(String productId, String productThumb, String productName, double productPrice, Float productRating, String productRatingNumber, String productDes) {
+        this.productId = productId;
+        this.productThumb = productThumb;
+        this.productName = productName;
+        this.productPrice = productPrice;
+        this.productRating = productRating;
+        this.productRatingNumber = productRatingNumber;
+        this.productDes = productDes;
     }
 
-    public void setProductThumb(int productThumb) {
-        ProductThumb = productThumb;
+    public String getProductId() {
+        return productId;
+    }
+
+    public void setProductId(String productId) {
+        this.productId = productId;
+    }
+
+    public String getProductThumb() {
+        return productThumb;
+    }
+
+    public void setProductThumb(String productThumb) {
+        this.productThumb = productThumb;
     }
 
     public String getProductName() {
-        return ProductName;
+        return productName;
     }
 
     public void setProductName(String productName) {
-        ProductName = productName;
+        this.productName = productName;
     }
 
     public double getProductPrice() {
-        return ProductPrice;
+        return productPrice;
     }
 
     public void setProductPrice(double productPrice) {
-        ProductPrice = productPrice;
+        this.productPrice = productPrice;
     }
 
     public Float getProductRating() {
-        return ProductRating;
+        return productRating;
     }
 
     public void setProductRating(Float productRating) {
-        ProductRating = productRating;
+        this.productRating = productRating;
     }
 
     public String getProductRatingNumber() {
-        return ProductRatingNumber;
+        return productRatingNumber;
     }
 
     public void setProductRatingNumber(String productRatingNumber) {
-        ProductRatingNumber = productRatingNumber;
+        this.productRatingNumber = productRatingNumber;
+    }
+
+    public String getProductDes() {
+        return productDes;
+    }
+
+    public void setProductDes(String productDes) {
+        this.productDes = productDes;
     }
 }

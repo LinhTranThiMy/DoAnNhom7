@@ -19,12 +19,6 @@
                 android:title="About us"/>
 
     </group>
-    <item android:title="Settings">
-        <menu>
-            <item
-                android:title="Language"
-                android:icon="@drawable/ic_anguage"/>
-        </menu>
-    </item>
+
 
 </menu>

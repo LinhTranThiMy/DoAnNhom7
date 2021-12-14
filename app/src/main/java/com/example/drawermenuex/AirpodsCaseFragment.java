@@ -2,6 +2,7 @@ package com.example.drawermenuex;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -11,6 +12,11 @@ import android.widget.GridView;
 
 import com.example.adapter.ProductAdapter;
 import com.example.model.Product;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
@@ -19,7 +25,7 @@ public class AirpodsCaseFragment extends Fragment {
     GridView gvAirpodCases;
     ArrayList<Product> AirpodCases;
     ProductAdapter adapterAirpodCase;
-
+    DatabaseReference Data;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -28,22 +34,29 @@ public class AirpodsCaseFragment extends Fragment {
         gvAirpodCases=view.findViewById(R.id.gvAirpodsCases);
 
 
-        AirpodCases = new ArrayList<Product>();
-        AirpodCases.add(new Product(R.drawable.airpods6, "CUSTOM CASE",190000,4F,"(12)"));
-        AirpodCases.add(new Product(R.drawable.airpods8, "CUSTOM CASE",190000,4F,"(12)"));
-        AirpodCases.add(new Product(R.drawable.airpods4, "CUSTOM CASE",190000,4F,"(12)"));
-        AirpodCases.add(new Product(R.drawable.airpods5, "CUSTOM CASE",190000,4F,"(12)"));
-        AirpodCases.add(new Product(R.drawable.airpods9, "CUSTOM CASE",190000,4F,"(12)"));
-        AirpodCases.add(new Product(R.drawable.airpods10, "CUSTOM CASE",190000,4F,"(12)"));
-        AirpodCases.add(new Product(R.drawable.airpods11, "CUSTOM CASE",190000,4F,"(12)"));
-        AirpodCases.add(new Product(R.drawable.airpods5, "CUSTOM CASE",190000,4F,"(12)"));
-        AirpodCases.add(new Product(R.drawable.airpods9, "CUSTOM CASE",190000,4F,"(12)"));
-        AirpodCases.add(new Product(R.drawable.airpods11, "CUSTOM CASE",190000,4F,"(12)"));
-        AirpodCases.add(new Product(R.drawable.airpods6, "CUSTOM CASE",190000,4F,"(12)"));
-        AirpodCases.add(new Product(R.drawable.airpods4, "CUSTOM CASE",190000,4F,"(12)"));
-
-        adapterAirpodCase = new ProductAdapter(getActivity(),R.layout.item_products,AirpodCases);
-        gvAirpodCases.setAdapter(adapterAirpodCase);
+        Data = FirebaseDatabase.getInstance().getReference();
+        GetDataFromFirebase();
         return view;
+    }
+
+    private void GetDataFromFirebase() {
+        Data.child("AirpodCase").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot datasnapshot) {
+                AirpodCases = new ArrayList<Product>();
+                for (DataSnapshot snapshot : datasnapshot.getChildren()) {
+                    Product product = snapshot.getValue(Product.class);
+                    AirpodCases.add(product);
+                }
+                adapterAirpodCase = new ProductAdapter(getActivity(), R.layout.item_products, AirpodCases);
+                gvAirpodCases.setAdapter(adapterAirpodCase);
+                adapterAirpodCase.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
     }
 }
