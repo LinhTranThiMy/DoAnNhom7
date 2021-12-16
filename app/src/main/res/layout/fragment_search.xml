@@ -20,32 +20,43 @@
         android:hint="Search"
         android:drawableStart="@drawable/search2"
         android:inputType="text"/>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center" >
 
-    <RelativeLayout
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/imvbtnCase"
+                android:layout_width="350dp"
+                android:layout_height="150dp"
+                android:layout_centerInParent="true"
+                android:background="@drawable/casesearch"
+                android:contextClickable="true"
+                app:shapeAppearance="@style/RoundedRectangle" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:text="CASES"
+                android:textColor="@color/white"
+                android:textSize="32sp"
+                android:textStyle="bold"
+                android:textAlignment="center"/>
+        </RelativeLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rcvSearch"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:gravity="center" >
+        android:background="@color/white"/>
 
-        <com.google.android.material.imageview.ShapeableImageView
-            android:id="@+id/imvbtnCase"
-            android:layout_width="350dp"
-            android:layout_height="150dp"
-            android:layout_centerInParent="true"
-            android:background="@drawable/casesearch"
-            android:contextClickable="true"
-            app:shapeAppearance="@style/RoundedRectangle" />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            android:text="CASES"
-            android:textColor="@color/white"
-            android:textSize="32sp"
-            android:textStyle="bold"
-            android:textAlignment="center"/>
-    </RelativeLayout>
+    </FrameLayout>
+
 
     <RelativeLayout
         android:layout_width="match_parent"

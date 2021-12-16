@@ -25,7 +25,6 @@ import androidx.viewpager2.widget.ViewPager2;
 
 import com.bumptech.glide.Glide;
 import com.example.adapter.ProductDetailsAdapter;
-import com.example.adapter.ViewPagerAdapterProductDetails;
 import com.example.model.Product;
 import com.example.model.ProductDetailsBanner;
 import com.example.util.Constant;
@@ -43,9 +42,7 @@ public class ProductDetailsFragment extends Fragment {
     ArrayList<ProductDetailsBanner> productDetails;
     ProductDetailsAdapter adapter;
     Product p;
-    TabLayout tabLayoutProductDetails;
-    ViewPager2 viewPagerProductDetails;
-    ViewPagerAdapterProductDetails adapterProductDetails;
+
 
     //Dialog
     Spinner spSelectDeviceBN, spSelectDeviceATC;
@@ -68,9 +65,9 @@ public class ProductDetailsFragment extends Fragment {
         txtPriceProductDetails=view.findViewById(R.id.txtPriceProductDetails);
         Rating_bar_products_details=view.findViewById(R.id.Rating_bar_products_details);
         rcvProductDetails=view.findViewById(R.id.rcvProductDetails);
+        txtDescription=view.findViewById(R.id.txtDescription);
 
-        tabLayoutProductDetails=view.findViewById(R.id.tabLayoutProductDetails);
-        viewPagerProductDetails=view.findViewById(R.id.viewPagerProductDetails);
+
         btnBuyNowPD=view.findViewById(R.id.btnBuyNowPD);
         btnAddtoCartPD=view.findViewById(R.id.btnAddtoCartPD);
         //lấy dữ liệu từ màn hình sản phẩm
@@ -89,36 +86,10 @@ public class ProductDetailsFragment extends Fragment {
             productDetails.add(new ProductDetailsBanner(p.getProductThumb()));
             adapter = new ProductDetailsAdapter(getContext(),productDetails);
             rcvProductDetails.setAdapter(adapter);
-
+            txtDescription.setText(p.getProductDes());
         }
 
-        tabLayoutProductDetails.addTab(tabLayoutProductDetails.newTab().setText("Description"));
-        tabLayoutProductDetails.addTab(tabLayoutProductDetails.newTab().setText("Review"));
-        adapterProductDetails = new ViewPagerAdapterProductDetails(getActivity());
-        viewPagerProductDetails.setAdapter(adapterProductDetails);
 
-        tabLayoutProductDetails.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
-            @Override
-            public void onTabSelected(TabLayout.Tab tab) {
-                viewPagerProductDetails.setCurrentItem(tab.getPosition());
-
-            }
-
-            @Override
-            public void onTabUnselected(TabLayout.Tab tab) {
-
-            }
-            @Override
-            public void onTabReselected(TabLayout.Tab tab) {
-
-            }
-        });
-        viewPagerProductDetails.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
-            @Override
-            public void onPageSelected(int position) {
-                tabLayoutProductDetails.selectTab(tabLayoutProductDetails.getTabAt(position));
-            }
-        });
         addEvents();
         return view;
     }
