@@ -48,6 +48,31 @@
         <entry key="..\:/Android/DrawerMenuEx/app/src/main/res/layout/menu_header.xml" value="0.1796875" />
         <entry key="..\:/Android/DrawerMenuEx/app/src/main/res/menu/bottom_navigation.xml" value="0.4466666666666667" />
         <entry key="..\:/Android/DrawerMenuEx/app/src/main/res/menu/main_menu.xml" value="0.1796875" />
+        <entry key="..\:/DoAn1/DoAnNhom7/app/src/main/res/drawable/gradient.xml" value="0.1" />
+        <entry key="..\:/DoAn1/DoAnNhom7/app/src/main/res/drawable/gradient2.xml" value="0.1" />
+        <entry key="..\:/DoAn1/DoAnNhom7/app/src/main/res/drawable/ic_back.xml" value="0.1" />
+        <entry key="..\:/DoAn1/DoAnNhom7/app/src/main/res/drawable/ic_baseline_add_shopping_cart.xml" value="0.1" />
+        <entry key="..\:/DoAn1/DoAnNhom7/app/src/main/res/drawable/ic_baseline_control_point.xml" value="0.1" />
+        <entry key="..\:/DoAn1/DoAnNhom7/app/src/main/res/drawable/ic_baseline_key.xml" value="0.1" />
+        <entry key="..\:/DoAn1/DoAnNhom7/app/src/main/res/drawable/ic_baseline_keyboard_arrow_right.xml" value="0.1" />
+        <entry key="..\:/DoAn1/DoAnNhom7/app/src/main/res/drawable/ic_baseline_keyboard_backspace_24.xml" value="0.1" />
+        <entry key="..\:/DoAn1/DoAnNhom7/app/src/main/res/drawable/ic_baseline_login.xml" value="0.1" />
+        <entry key="..\:/DoAn1/DoAnNhom7/app/src/main/res/drawable/ic_baseline_menu_24.xml" value="0.1" />
+        <entry key="..\:/DoAn1/DoAnNhom7/app/src/main/res/drawable/ic_baseline_person_outline.xml" value="0.1" />
+        <entry key="..\:/DoAn1/DoAnNhom7/app/src/main/res/drawable/ic_mail.xml" value="0.1" />
+        <entry key="..\:/DoAn1/DoAnNhom7/app/src/main/res/layout/activity_forgot_password.xml" value="0.18333333333333332" />
+        <entry key="..\:/DoAn1/DoAnNhom7/app/src/main/res/layout/activity_login.xml" value="0.18333333333333332" />
+        <entry key="..\:/DoAn1/DoAnNhom7/app/src/main/res/layout/activity_profile_my_account1.xml" value="0.18333333333333332" />
+        <entry key="..\:/DoAn1/DoAnNhom7/app/src/main/res/layout/activity_profile_my_account2.xml" value="0.18333333333333332" />
+        <entry key="..\:/DoAn1/DoAnNhom7/app/src/main/res/layout/activity_reset_password.xml" value="0.18333333333333332" />
+        <entry key="..\:/DoAn1/DoAnNhom7/app/src/main/res/layout/activity_sign_up.xml" value="0.11363636363636363" />
+        <entry key="..\:/DoAn1/DoAnNhom7/app/src/main/res/layout/activity_splash_screen.xml" value="0.18333333333333332" />
+        <entry key="..\:/DoAn1/DoAnNhom7/app/src/main/res/layout/fragment_account.xml" value="0.10101010101010101" />
+        <entry key="..\:/DoAn1/DoAnNhom7/app/src/main/res/layout/fragment_profile.xml" value="0.10101010101010101" />
+        <entry key="..\:/DoAn1/DoAnNhom7/app/src/main/res/layout/fragment_profile2.xml" value="0.16927083333333334" />
+        <entry key="..\:/DoAn1/DoAnNhom7/app/src/main/res/layout/fragment_profile_my_account1.xml" value="0.1" />
+        <entry key="..\:/DoAn1/DoAnNhom7/app/src/main/res/layout/fragment_profile_password1.xml" value="0.1" />
+        <entry key="..\:/DoAn1/DoAnNhom7/app/src/main/res/layout/fragment_profile_password2.xml" value="0.18333333333333332" />
         <entry key="..\:/nckh/DrawerMenuEx/app/src/main/res/drawable/custom_button.xml" value="0.19583333333333333" />
         <entry key="..\:/nckh/DrawerMenuEx/app/src/main/res/layout/activity_filter_fragment.xml" value="0.1796875" />
         <entry key="..\:/nckh/DrawerMenuEx/app/src/main/res/layout/activity_main.xml" value="0.1" />
