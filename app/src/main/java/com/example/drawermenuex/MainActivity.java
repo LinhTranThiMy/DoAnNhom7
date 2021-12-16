@@ -24,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
     int FRAGMENT_SEARCH=5;
     int FRAGMENT_CART=6;
     int FRAGMENT_ACCOUNT=7;
+    int FRAGMENT_ABOUTUS=8;
     int CurrentFragment=FRAGMENT_HOME;
     Toolbar toolbarmain;
     DrawerLayout drawerLayoutmain;
@@ -85,6 +86,7 @@ public class MainActivity extends AppCompatActivity {
                             }
                         }
                         break;
+
                 }
                 return false;
             }
@@ -124,6 +126,14 @@ public class MainActivity extends AppCompatActivity {
                     {
                         replaceFragment(new AccessoriesFragment());
                         CurrentFragment=FRAGMENT_ACCESSORIES;
+                        bottomNavigationView.getMenu().findItem(R.id.menu_none).setChecked(true);
+                    }
+                }else if(id==R.id.txtAboutus)
+                {
+                    if(FRAGMENT_ABOUTUS!=CurrentFragment)
+                    {
+                        replaceFragment(new AbouUsFragment());
+                        CurrentFragment=FRAGMENT_ABOUTUS;
                         bottomNavigationView.getMenu().findItem(R.id.menu_none).setChecked(true);
                     }
                 }
