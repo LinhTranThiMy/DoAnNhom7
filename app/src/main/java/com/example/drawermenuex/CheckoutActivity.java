@@ -17,7 +17,7 @@ public class CheckoutActivity extends AppCompatActivity {
         btnCloseCheckOut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent= new Intent(CheckoutActivity.this,ShoppingCartFragment.class);
+                Intent intent= new Intent(CheckoutActivity.this,CartFragment.class);
                 startActivity(intent);
             }
         });
