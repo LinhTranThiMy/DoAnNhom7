@@ -2,4 +2,10 @@
     <string name="app_name">DrawerMenuEx</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="linkFacebook"><u>www.facebook.com/fukishopne</u></string>
+    <string name="linkInstagram"><u>www.instagram.com/fukiaccessories</u></string>
+    <string name="linkWebsite"><u>www.fukiaccessories.com"</u></string>
+
+
 </resources>

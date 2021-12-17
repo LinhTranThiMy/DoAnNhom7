@@ -87,10 +87,14 @@
         <entry key="..\:/DoAn1/DoAnNhom7/app/src/main/res/layout/fragment_profile_password2.xml" value="0.18333333333333332" />
         <entry key="..\:/DoAn1/DoAnNhom7/app/src/main/res/layout/fragment_shopping_cart.xml" value="0.18333333333333332" />
         <entry key="..\:/nckh/DrawerMenuEx/app/src/main/res/drawable/custom_button.xml" value="0.19583333333333333" />
+        <entry key="..\:/nckh/DrawerMenuEx/app/src/main/res/drawable/custom_comment.xml" value="0.19583333333333333" />
+        <entry key="..\:/nckh/DrawerMenuEx/app/src/main/res/drawable/grey_border_top.xml" value="0.19583333333333333" />
+        <entry key="..\:/nckh/DrawerMenuEx/app/src/main/res/drawable/ic_baseline_arrow_back_24.xml" value="0.19583333333333333" />
         <entry key="..\:/nckh/DrawerMenuEx/app/src/main/res/layout/activity_filter_fragment.xml" value="0.1796875" />
         <entry key="..\:/nckh/DrawerMenuEx/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/nckh/DrawerMenuEx/app/src/main/res/layout/app_bar_main.xml" value="0.14907407407407408" />
         <entry key="..\:/nckh/DrawerMenuEx/app/src/main/res/layout/content_main.xml" value="0.1" />
+        <entry key="..\:/nckh/DrawerMenuEx/app/src/main/res/layout/fragment_aboutus.xml" value="0.22" />
         <entry key="..\:/nckh/DrawerMenuEx/app/src/main/res/layout/fragment_accessories.xml" value="0.1796875" />
         <entry key="..\:/nckh/DrawerMenuEx/app/src/main/res/layout/fragment_all_case.xml" value="0.14907407407407408" />
         <entry key="..\:/nckh/DrawerMenuEx/app/src/main/res/layout/fragment_cables_accesroeis.xml" value="0.1796875" />
@@ -98,6 +102,11 @@
         <entry key="..\:/nckh/DrawerMenuEx/app/src/main/res/layout/fragment_cases.xml" value="0.12" />
         <entry key="..\:/nckh/DrawerMenuEx/app/src/main/res/layout/fragment_collection.xml" value="0.1796875" />
         <entry key="..\:/nckh/DrawerMenuEx/app/src/main/res/layout/fragment_filter.xml" value="0.22" />
+        <entry key="..\:/nckh/DrawerMenuEx/app/src/main/res/layout/fragment_home.xml" value="0.13229166666666667" />
+        <entry key="..\:/nckh/DrawerMenuEx/app/src/main/res/layout/fragment_rate.xml" value="0.1796875" />
+        <entry key="..\:/nckh/DrawerMenuEx/app/src/main/res/layout/fragment_search.xml" value="0.1" />
+        <entry key="..\:/nckh/DrawerMenuEx/app/src/main/res/layout/item_about_us.xml" value="0.22" />
+        <entry key="..\:/nckh/DrawerMenuEx/app/src/main/res/layout/item_popular.xml" value="0.1" />
       </map>
     </option>
   </component>

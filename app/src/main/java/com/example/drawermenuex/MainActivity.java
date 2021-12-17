@@ -55,12 +55,11 @@ public class MainActivity extends AppCompatActivity {
                         break;
                     case R.id.account:
                             replaceFragment(new AccountFragment());
-                            bottomNavigationView.getMenu().findItem(R.id.account).setChecked(true);
-                            int size2 = navigationbarmain.getMenu().size();
-                            for (int i = 0; i < size2; i++) {
-                                navigationbarmain.getMenu().getItem(i).setChecked(false);
-                            }
+                            replaceFragment(new HomeFragment());
+                            bottomNavigationView.getMenu().findItem(R.id.home).setChecked(true);
+                            navigationbarmain.getMenu().findItem(R.id.txtHome).setChecked(true);
                         break;
+
                 }
                 return false;
             }
@@ -86,6 +85,11 @@ public class MainActivity extends AppCompatActivity {
                 {
                     replaceFragment(new AccessoriesFragment());
                     bottomNavigationView.getMenu().findItem(R.id.menu_none).setChecked(true);
+
+                }else if(id==R.id.txtAboutus)
+                {
+                        replaceFragment(new AbouUsFragment());
+                        bottomNavigationView.getMenu().findItem(R.id.menu_none).setChecked(true);
                 }
                 drawerLayoutmain.closeDrawer(GravityCompat.START);
                 return true;
