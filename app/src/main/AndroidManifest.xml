@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DrawerMenuEx">
         <activity
+            android:name=".CheckoutActivity"
+            android:exported="true" />
+        <activity
             android:name=".ProfileMyAccount2"
             android:exported="true" />
         <activity
@@ -39,7 +42,6 @@
         <activity
             android:name=".MainActivity"
             android:exported="true">
-
         </activity>
     </application>
 

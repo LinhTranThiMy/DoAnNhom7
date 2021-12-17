@@ -54,12 +54,12 @@ public class MainActivity extends AppCompatActivity {
                         }
                         break;
                     case R.id.account:
-                        replaceFragment(new ProfileFragment());
-                        bottomNavigationView.getMenu().findItem(R.id.account).setChecked(true);
-                        int size2 = navigationbarmain.getMenu().size();
-                        for (int i = 0; i < size2; i++) {
-                            navigationbarmain.getMenu().getItem(i).setChecked(false);
-                        }
+                            replaceFragment(new AccountFragment());
+                            bottomNavigationView.getMenu().findItem(R.id.account).setChecked(true);
+                            int size2 = navigationbarmain.getMenu().size();
+                            for (int i = 0; i < size2; i++) {
+                                navigationbarmain.getMenu().getItem(i).setChecked(false);
+                            }
                         break;
                 }
                 return false;
