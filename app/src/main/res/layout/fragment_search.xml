@@ -9,7 +9,6 @@
     android:layout_marginTop="50dp"
     android:id="@+id/layoutcontainer">
 
-
     <EditText
         android:id="@+id/edtSearch"
         android:background="@drawable/custom_search"
@@ -22,7 +21,12 @@
         android:inputType="text"/>
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_marginTop="20dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -48,7 +52,58 @@
                 android:textStyle="bold"
                 android:textAlignment="center"/>
         </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginTop="10dp">
 
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/imvbtnCollection"
+                    android:layout_width="350dp"
+                    android:layout_height="150dp"
+                    android:layout_centerInParent="true"
+                    android:background="@drawable/coca"
+                    app:shapeAppearance="@style/RoundedRectangle"
+                    android:contextClickable="true"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:text="COLLECTION"
+                    android:textColor="@color/white"
+                    android:textSize="32sp"
+                    android:textStyle="bold"
+                    android:textAlignment="center"/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginTop="10dp">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/imvbtnAccessories"
+                    android:layout_width="350dp"
+                    android:layout_height="150dp"
+                    android:layout_centerInParent="true"
+                    android:background="@drawable/accessories"
+                    app:shapeAppearance="@style/RoundedRectangle"
+                    android:contextClickable="true"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="ACCESSORIES"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="32sp"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+        </LinearLayout>
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rcvSearch"
         android:layout_width="match_parent"
@@ -58,56 +113,6 @@
     </FrameLayout>
 
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:layout_marginTop="10dp">
 
-        <com.google.android.material.imageview.ShapeableImageView
-            android:id="@+id/imvbtnCollection"
-            android:layout_width="350dp"
-            android:layout_height="150dp"
-            android:layout_centerInParent="true"
-            android:background="@drawable/coca"
-            app:shapeAppearance="@style/RoundedRectangle"
-            android:contextClickable="true"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            android:text="COLLECTION"
-            android:textColor="@color/white"
-            android:textSize="32sp"
-            android:textStyle="bold"
-            android:textAlignment="center"/>
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:layout_marginTop="10dp">
-
-        <com.google.android.material.imageview.ShapeableImageView
-            android:id="@+id/imvbtnAccessories"
-            android:layout_width="350dp"
-            android:layout_height="150dp"
-            android:layout_centerInParent="true"
-            android:background="@drawable/accessories"
-            app:shapeAppearance="@style/RoundedRectangle"
-            android:contextClickable="true"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:text="ACCESSORIES"
-            android:textAlignment="center"
-            android:textColor="@color/white"
-            android:textSize="32sp"
-            android:textStyle="bold" />
-    </RelativeLayout>
 
 </LinearLayout>

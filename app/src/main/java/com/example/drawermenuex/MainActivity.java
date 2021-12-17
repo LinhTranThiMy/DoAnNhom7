@@ -17,14 +17,6 @@ import com.google.android.material.navigation.NavigationBarView;
 import com.google.android.material.navigation.NavigationView;
 
 public class MainActivity extends AppCompatActivity {
-    int FRAGMENT_HOME=1;
-    int FRAGMENT_CASES=2;
-    int FRAGMENT_COLLECTION=3;
-    int FRAGMENT_ACCESSORIES=4;
-    int FRAGMENT_SEARCH=5;
-    int FRAGMENT_CART=6;
-    int FRAGMENT_ACCOUNT=7;
-    int CurrentFragment=FRAGMENT_HOME;
     Toolbar toolbarmain;
     DrawerLayout drawerLayoutmain;
     NavigationView navigationbarmain;
@@ -41,48 +33,32 @@ public class MainActivity extends AppCompatActivity {
                 switch (item.getItemId())
                 {
                     case R.id.home:
-                        if(FRAGMENT_HOME!=CurrentFragment)
-                        {
-                            replaceFragment(new HomeFragment());
-                            CurrentFragment=FRAGMENT_HOME;
-                            bottomNavigationView.getMenu().findItem(R.id.home).setChecked(true);
-                            navigationbarmain.getMenu().findItem(R.id.txtHome).setChecked(true);
-                        }
+                        replaceFragment(new HomeFragment());
+                        bottomNavigationView.getMenu().findItem(R.id.home).setChecked(true);
+                        navigationbarmain.getMenu().findItem(R.id.txtHome).setChecked(true);
                         break;
                     case R.id.search:
-                        if(FRAGMENT_SEARCH!=CurrentFragment)
-                        {
-                            replaceFragment(new SearchFragment());
-                            CurrentFragment=FRAGMENT_SEARCH;
-                            bottomNavigationView.getMenu().findItem(R.id.search).setChecked(true);
-                            int size = navigationbarmain.getMenu().size();
-                            for (int i = 0; i < size; i++) {
-                                navigationbarmain.getMenu().getItem(i).setChecked(false);
-                            }
+                        replaceFragment(new SearchFragment());
+                        bottomNavigationView.getMenu().findItem(R.id.search).setChecked(true);
+                        int size = navigationbarmain.getMenu().size();
+                        for (int i = 0; i < size; i++) {
+                            navigationbarmain.getMenu().getItem(i).setChecked(false);
                         }
                         break;
                     case R.id.cart:
-                        if(FRAGMENT_CART!=CurrentFragment)
-                        {
-                            replaceFragment(new CartFragment());
-                            CurrentFragment=FRAGMENT_CART;
-                            bottomNavigationView.getMenu().findItem(R.id.cart).setChecked(true);
-                            int size = navigationbarmain.getMenu().size();
-                            for (int i = 0; i < size; i++) {
-                                navigationbarmain.getMenu().getItem(i).setChecked(false);
-                            }
+                        replaceFragment(new CartFragment());
+                        bottomNavigationView.getMenu().findItem(R.id.cart).setChecked(true);
+                        int size1 = navigationbarmain.getMenu().size();
+                        for (int i = 0; i < size1; i++) {
+                            navigationbarmain.getMenu().getItem(i).setChecked(false);
                         }
                         break;
                     case R.id.account:
-                        if(FRAGMENT_ACCOUNT!=CurrentFragment)
-                        {
-                            replaceFragment(new ProfileFragment());
-                            CurrentFragment=FRAGMENT_ACCOUNT;
-                            bottomNavigationView.getMenu().findItem(R.id.account).setChecked(true);
-                            int size = navigationbarmain.getMenu().size();
-                            for (int i = 0; i < size; i++) {
-                                navigationbarmain.getMenu().getItem(i).setChecked(false);
-                            }
+                        replaceFragment(new ProfileFragment());
+                        bottomNavigationView.getMenu().findItem(R.id.account).setChecked(true);
+                        int size2 = navigationbarmain.getMenu().size();
+                        for (int i = 0; i < size2; i++) {
+                            navigationbarmain.getMenu().getItem(i).setChecked(false);
                         }
                         break;
                 }
@@ -95,37 +71,21 @@ public class MainActivity extends AppCompatActivity {
                 int id =item.getItemId();
                 if(id==R.id.txtHome)
                 {
-                    if(FRAGMENT_HOME!=CurrentFragment)
-                    {
-                        replaceFragment(new HomeFragment());
-                        CurrentFragment=FRAGMENT_HOME;
-                        bottomNavigationView.getMenu().findItem(R.id.home).setChecked(true);
+                    replaceFragment(new HomeFragment());
+                    bottomNavigationView.getMenu().findItem(R.id.home).setChecked(true);
 
-                    }
                 } else if(id==R.id.txtCases)
                 {
-                    if(FRAGMENT_CASES!=CurrentFragment)
-                    {
-                        replaceFragment(new CasesFragment());
-                        CurrentFragment=FRAGMENT_CASES;
-                        bottomNavigationView.getMenu().findItem(R.id.menu_none).setChecked(true);
-                    }
+                    replaceFragment(new CasesFragment());
+                    bottomNavigationView.getMenu().findItem(R.id.menu_none).setChecked(true);
                 } else if(id==R.id.txtCollection)
                 {
-                    if(FRAGMENT_COLLECTION!=CurrentFragment)
-                    {
-                        replaceFragment(new CollectionFragment());
-                        CurrentFragment=FRAGMENT_COLLECTION;
-                        bottomNavigationView.getMenu().findItem(R.id.menu_none).setChecked(true);
-                    }
+                    replaceFragment(new CollectionFragment());
+                    bottomNavigationView.getMenu().findItem(R.id.menu_none).setChecked(true);
                 } else if(id==R.id.txtAccesories)
                 {
-                    if(FRAGMENT_ACCESSORIES!=CurrentFragment)
-                    {
-                        replaceFragment(new AccessoriesFragment());
-                        CurrentFragment=FRAGMENT_ACCESSORIES;
-                        bottomNavigationView.getMenu().findItem(R.id.menu_none).setChecked(true);
-                    }
+                    replaceFragment(new AccessoriesFragment());
+                    bottomNavigationView.getMenu().findItem(R.id.menu_none).setChecked(true);
                 }
                 drawerLayoutmain.closeDrawer(GravityCompat.START);
                 return true;
