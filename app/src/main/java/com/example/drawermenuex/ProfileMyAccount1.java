@@ -36,7 +36,6 @@ public class ProfileMyAccount1 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(ProfileMyAccount1.this, ProfileMyAccount2.class);
-
                 startActivity(intent);
             }
         });

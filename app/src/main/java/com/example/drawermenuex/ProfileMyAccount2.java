@@ -44,8 +44,8 @@ public class ProfileMyAccount2 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 onBackPressed();
-//                Intent intent= new Intent(ProfileMyAccount2.this,ProfileFragment.class);
-//                startActivity(intent);
+                Intent intent= new Intent(ProfileMyAccount2.this,AccountFragment.class);
+                startActivity(intent);
             }
         });
     }
