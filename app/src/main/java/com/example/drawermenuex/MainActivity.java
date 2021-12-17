@@ -64,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.cart:
                         if(FRAGMENT_CART!=CurrentFragment)
                         {
-                            replaceFragment(new CartFragment());
+                            replaceFragment(new ShoppingCartFragment());
                             CurrentFragment=FRAGMENT_CART;
                             bottomNavigationView.getMenu().findItem(R.id.cart).setChecked(true);
                             int size = navigationbarmain.getMenu().size();
@@ -76,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.account:
                         if(FRAGMENT_ACCOUNT!=CurrentFragment)
                         {
-                            replaceFragment(new ProfileFragment());
+                            replaceFragment(new AccountFragment());
                             CurrentFragment=FRAGMENT_ACCOUNT;
                             bottomNavigationView.getMenu().findItem(R.id.account).setChecked(true);
                             int size = navigationbarmain.getMenu().size();

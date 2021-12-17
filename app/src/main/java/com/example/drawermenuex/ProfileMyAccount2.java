@@ -43,8 +43,9 @@ public class ProfileMyAccount2 extends AppCompatActivity {
         btnSaveProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent= new Intent(ProfileMyAccount2.this,ProfileFragment.class);
-                startActivity(intent);
+                onBackPressed();
+//                Intent intent= new Intent(ProfileMyAccount2.this,ProfileFragment.class);
+//                startActivity(intent);
             }
         });
     }

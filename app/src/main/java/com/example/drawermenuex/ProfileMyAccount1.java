@@ -40,5 +40,12 @@ public class ProfileMyAccount1 extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        btnBackMyAccount1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent= new Intent(ProfileMyAccount1.this,ProfileFragment.class);
+                startActivity(intent);
+            }
+        });
     }
 }

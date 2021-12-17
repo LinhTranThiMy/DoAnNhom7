@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DrawerMenuEx">
         <activity
+            android:name=".CheckoutActivity"
+            android:exported="true" />
+        <activity
             android:name=".ProfileMyAccount2"
             android:exported="true" />
         <activity
@@ -17,7 +20,13 @@
             android:exported="true" />
         <activity
             android:name=".SplashScreen"
-            android:exported="true" />
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".ResetPasswordActivity"
             android:exported="true" />
@@ -29,19 +38,12 @@
             android:exported="true" />
         <activity
             android:name=".LoginActivity"
-            android:exported="true" />
-        <activity
-            android:name=".FilterFragment"
-            android:exported="true" />
+            android:exported="true" /> <!-- <activity -->
+        <!-- android:name=".FilterFragment" -->
+        <!-- android:exported="true" /> -->
         <activity
             android:name=".MainActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:exported="true" />
     </application>
 
 </manifest>
