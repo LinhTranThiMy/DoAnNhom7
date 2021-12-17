@@ -3,6 +3,7 @@ package com.example.drawermenuex;
 import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
@@ -20,6 +21,9 @@ public class ProfileFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view=inflater.inflate(R.layout.fragment_profile,container,false);
+        //Ẩn actionBar
+        ((AppCompatActivity) getActivity()).getSupportActionBar().hide();
+
         btnMyAccount=view.findViewById(R.id.btnMyAccount);
         btnPassword=view.findViewById(R.id.btnPassword);
         btnBackProfile=view.findViewById(R.id.btnBackProfile);

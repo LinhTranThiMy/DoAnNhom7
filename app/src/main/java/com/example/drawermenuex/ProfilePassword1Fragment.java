@@ -51,7 +51,7 @@ public class ProfilePassword1Fragment extends Fragment {
                         bundle.putString("password",edtPassword.getText().toString());
                         ProfilePassword2Fragment profilePassword2= new ProfilePassword2Fragment();
                         profilePassword2.setArguments(bundle);
-                        getFragmentManager().beginTransaction().replace(R.id.frame_layout,profilePassword2).commit();
+                        getParentFragmentManager().beginTransaction().replace(R.id.frame_layout,profilePassword2).commit();
                     }else {
                         Toast.makeText(getContext(), "Email or password does not exists", Toast.LENGTH_SHORT).show();
                     }

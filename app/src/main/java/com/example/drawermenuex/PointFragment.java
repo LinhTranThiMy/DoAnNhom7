@@ -19,7 +19,9 @@ public class PointFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_point, container, false);
-        ((AppCompatActivity) getActivity()).getSupportActionBar().show();
+        //Ẩn actionBar
+        ((AppCompatActivity) getActivity()).getSupportActionBar().hide();
+
         btnBackPoints=view.findViewById(R.id.btnBackPoints);
         btnBackPoints.setOnClickListener(new View.OnClickListener() {
             @Override

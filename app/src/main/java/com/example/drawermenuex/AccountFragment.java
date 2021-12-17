@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
@@ -20,6 +21,9 @@ public class AccountFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view=inflater.inflate(R.layout.fragment_account,container,false);
+        //Hiện actionBar
+        ((AppCompatActivity) getActivity()).getSupportActionBar().show();
+
         btnProfile=view.findViewById(R.id.btnProfile);
         btnPoints=view.findViewById(R.id.btnPoints);
         btnMyOrder=view.findViewById(R.id.btnMyOrder);
