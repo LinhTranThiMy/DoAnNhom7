@@ -51,7 +51,7 @@ public class AccountFragment extends Fragment {
         btnMyOrder.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                replaceFragment(new MyOrderFragment());
+               replaceFragment(new MyOrderFragment());
             }
         });
         return view;
