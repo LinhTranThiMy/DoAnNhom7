@@ -46,7 +46,7 @@ public class Delivered_MyOrders extends Fragment implements ItemClickListener {
     }
     private void replaceFragment(Fragment fragment){
         FragmentTransaction fragmentTransaction = getParentFragmentManager().beginTransaction();
-        fragmentTransaction.replace(R.id.frame_layout,fragment);
+        fragmentTransaction.replace(R.id.frame_layout,fragment).addToBackStack(null);
         fragmentTransaction.commit();
     }
 

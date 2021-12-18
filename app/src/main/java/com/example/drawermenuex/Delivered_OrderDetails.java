@@ -14,7 +14,7 @@ import androidx.fragment.app.FragmentTransaction;
 public class Delivered_OrderDetails extends Fragment {
     Button btnRateUs;
     private View view;
-
+    ImageButton btnClose;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -31,6 +31,7 @@ public class Delivered_OrderDetails extends Fragment {
     private void linkViews() {
 
         btnRateUs=view.findViewById(R.id.btnRateUs);
+        btnClose=view.findViewById(R.id.btnClose);
 
     }
 
@@ -40,6 +41,12 @@ public class Delivered_OrderDetails extends Fragment {
             public void onClick(View v) {
             //man hinh RateUs
 
+            }
+        });
+        btnClose.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getParentFragmentManager().popBackStack();
             }
         });
     }
