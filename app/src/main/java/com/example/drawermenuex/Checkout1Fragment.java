@@ -57,10 +57,6 @@ public class Checkout1Fragment extends Fragment {
 
     }
 
-
-
-
-
     private void addEvents() {
         spProvince.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
