@@ -10,9 +10,6 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-
-
-
         <LinearLayout
             android:id="@+id/lnLogo"
             android:layout_width="match_parent"
@@ -155,22 +152,27 @@
                 android:elevation="8dp"
                 app:cardCornerRadius="8dp">
 
-                <com.google.android.material.textfield.TextInputLayout
+                <FrameLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    app:passwordToggleTint="#9D1B34"
-                    app:passwordToggleEnabled="true">
-                    <com.google.android.material.textfield.TextInputEditText
+                    android:layout_height="40dp"
+                    >
+                    <EditText
                         android:id="@+id/edtPassword"
                         android:layout_width="match_parent"
-                        android:layout_height="40dp"
-                        android:background="@android:color/transparent"
-                        android:padding="8dp"
+                        android:layout_height="wrap_content"                             android:background="@android:color/transparent"
+                        android:padding="10dp"
                         android:textColor="#9D1B34"
                         android:textSize="15sp"
-                        android:inputType="none"
+                        android:inputType="textPassword" />
+                    <ImageView
+                        android:id="@+id/imvSigupPasswordToggle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end"
+                        android:layout_marginVertical="10dp"
+                        android:layout_marginEnd="10dp"
                         />
-                </com.google.android.material.textfield.TextInputLayout>
+                </FrameLayout>
             </androidx.cardview.widget.CardView>
 
 
@@ -190,22 +192,28 @@
                 android:elevation="8dp"
                 app:cardCornerRadius="8dp">
 
-                <com.google.android.material.textfield.TextInputLayout
+                <FrameLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    app:passwordToggleTint="#9D1B34"
-                    app:passwordToggleEnabled="true">
-                    <com.google.android.material.textfield.TextInputEditText
+                    android:layout_height="40dp"
+                    >
+                    <EditText
                         android:id="@+id/edtConfirmPassword"
                         android:layout_width="match_parent"
-                        android:layout_height="40dp"
+                        android:layout_height="wrap_content"
                         android:background="@android:color/transparent"
-                        android:padding="8dp"
+                        android:padding="10dp"
                         android:textColor="#9D1B34"
                         android:textSize="15sp"
-                        android:inputType="none"
+                        android:inputType="textPassword" />
+                    <ImageView
+                        android:id="@+id/imvSigupConfirmPasswordToggle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end"
+                        android:layout_marginVertical="10dp"
+                        android:layout_marginEnd="10dp"
                         />
-                </com.google.android.material.textfield.TextInputLayout>
+                </FrameLayout>
             </androidx.cardview.widget.CardView>
 
         </LinearLayout>

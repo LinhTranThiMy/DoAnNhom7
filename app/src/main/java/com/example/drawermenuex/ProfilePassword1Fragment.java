@@ -5,12 +5,15 @@ import android.os.Bundle;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.text.method.HideReturnsTransformationMethod;
+import android.text.method.PasswordTransformationMethod;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 
@@ -18,6 +21,7 @@ public class ProfilePassword1Fragment extends Fragment {
     ImageButton btnBackPassword1;
     Button btnChangePassword;
     EditText edtEmail,edtPassword;
+    ImageView imvProfilePassword;
     public static DBHelper DB;
     private View view;
     @Override
@@ -28,6 +32,8 @@ public class ProfilePassword1Fragment extends Fragment {
         btnBackPassword1=view.findViewById(R.id.btnBackPassword1);
         btnChangePassword=view.findViewById(R.id.btnChangePassword);
         edtEmail=view.findViewById(R.id.edtEmail);
+        imvProfilePassword=view.findViewById(R.id.imvProfilePassword);
+        imvProfilePassword.setImageResource(R.drawable.ic_hide_pass);
         DB=new DBHelper(getContext());
         btnBackPassword1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -58,6 +64,20 @@ public class ProfilePassword1Fragment extends Fragment {
                 }
             }
 
+        });
+        imvProfilePassword.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(edtPassword.getTransformationMethod().equals(HideReturnsTransformationMethod.getInstance())){
+                    //If password is visible then Hide it
+                    edtPassword.setTransformationMethod(PasswordTransformationMethod.getInstance());
+                    //Change icon
+                    imvProfilePassword.setImageResource(R.drawable.ic_hide_pass);
+                }else{
+                    edtPassword.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+                    imvProfilePassword.setImageResource(R.drawable.ic_show_pass);
+                }
+            }
         });
         return view;
     }

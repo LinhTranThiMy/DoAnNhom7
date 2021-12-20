@@ -39,7 +39,7 @@ public class Delivered_OrderDetails extends Fragment {
         btnRateUs.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-            //man hinh RateUs
+                replaceFragment(new RateUs());
 
             }
         });
@@ -50,4 +50,10 @@ public class Delivered_OrderDetails extends Fragment {
             }
         });
     }
+    private void replaceFragment(Fragment fragment){
+        FragmentTransaction fragmentTransaction = getParentFragmentManager().beginTransaction();
+        fragmentTransaction.replace(R.id.frame_layout,fragment).addToBackStack(null);
+        fragmentTransaction.commit();
+    }
+
 }

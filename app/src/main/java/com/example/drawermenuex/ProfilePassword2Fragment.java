@@ -5,12 +5,15 @@ import android.os.Bundle;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.text.method.HideReturnsTransformationMethod;
+import android.text.method.PasswordTransformationMethod;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -20,6 +23,7 @@ public class ProfilePassword2Fragment extends Fragment {
     TextView txtEmail,txtCurrentPass;
     EditText edtNewPass, edtConfirmpass;
     Button btnSavePassword;
+    ImageView imvConfirmedPass,imvNewPass;
     public static DBHelper DB;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -30,6 +34,11 @@ public class ProfilePassword2Fragment extends Fragment {
         edtNewPass=view.findViewById(R.id.edtNewPass);
         edtConfirmpass=view.findViewById(R.id.edtConfirmpass);
         btnSavePassword= view.findViewById(R.id.btnSavePassword);
+        imvNewPass= view.findViewById(R.id.imvNewPass);
+        imvConfirmedPass= view.findViewById(R.id.imvConfirmedPass);
+        imvNewPass=view.findViewById(R.id.imvNewPass);
+        imvConfirmedPass.setImageResource(R.drawable.ic_hide_pass);
+        imvNewPass.setImageResource(R.drawable.ic_hide_pass);
         txtEmail=view.findViewById(R.id.txtEmail);
 
         DB=new DBHelper(getContext());
@@ -67,6 +76,34 @@ public class ProfilePassword2Fragment extends Fragment {
 //                    }
                 } else {
                     Toast.makeText(getContext(), "Password not match ", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+        imvNewPass.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(edtNewPass.getTransformationMethod().equals(HideReturnsTransformationMethod.getInstance())){
+                    //If password is visible then Hide it
+                    edtNewPass.setTransformationMethod(PasswordTransformationMethod.getInstance());
+                    //Change icon
+                    imvNewPass.setImageResource(R.drawable.ic_hide_pass);
+                }else{
+                    edtNewPass.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+                    imvNewPass.setImageResource(R.drawable.ic_show_pass);
+                }
+            }
+        });
+        imvConfirmedPass.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(edtConfirmpass.getTransformationMethod().equals(HideReturnsTransformationMethod.getInstance())){
+                    //If password is visible then Hide it
+                    edtConfirmpass.setTransformationMethod(PasswordTransformationMethod.getInstance());
+                    //Change icon
+                    imvConfirmedPass.setImageResource(R.drawable.ic_hide_pass);
+                }else{
+                    edtConfirmpass.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+                    imvConfirmedPass.setImageResource(R.drawable.ic_show_pass);
                 }
             }
         });

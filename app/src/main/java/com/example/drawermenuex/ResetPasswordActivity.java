@@ -4,9 +4,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.method.HideReturnsTransformationMethod;
+import android.text.method.PasswordTransformationMethod;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -14,6 +17,7 @@ public class ResetPasswordActivity extends AppCompatActivity {
     EditText edtPass,edtConfirmPass;
     Button btnResetPassword;
     TextView txtEmail;
+    ImageView imvResetPasswordToggle, imvConfirmPasswordToggle;
     public static DBHelper DB;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +32,10 @@ public class ResetPasswordActivity extends AppCompatActivity {
         edtConfirmPass=findViewById(R.id.edtConfirmPass);
         txtEmail= findViewById(R.id.txtEmail);
         btnResetPassword=findViewById(R.id.btnResetPassword);
+        imvConfirmPasswordToggle=findViewById(R.id.imvConfirmPasswordToggle);
+        imvResetPasswordToggle=findViewById(R.id.imvResetPasswordToggle);
+        imvResetPasswordToggle.setImageResource(R.drawable.ic_hide_pass);
+        imvConfirmPasswordToggle.setImageResource(R.drawable.ic_hide_pass);
         DB=new DBHelper(this);
 
         Intent intent= getIntent();
@@ -56,6 +64,34 @@ public class ResetPasswordActivity extends AppCompatActivity {
                     }
                 }else{
                     Toast.makeText(ResetPasswordActivity.this, "Password not match ", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+        imvResetPasswordToggle.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(edtPass.getTransformationMethod().equals(HideReturnsTransformationMethod.getInstance())){
+                    //If password is visible then Hide it
+                    edtPass.setTransformationMethod(PasswordTransformationMethod.getInstance());
+                    //Change icon
+                    imvResetPasswordToggle.setImageResource(R.drawable.ic_hide_pass);
+                }else{
+                    edtPass.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+                    imvResetPasswordToggle.setImageResource(R.drawable.ic_show_pass);
+                }
+            }
+        });
+        imvConfirmPasswordToggle.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(edtConfirmPass.getTransformationMethod().equals(HideReturnsTransformationMethod.getInstance())){
+                    //If password is visible then Hide it
+                    edtConfirmPass.setTransformationMethod(PasswordTransformationMethod.getInstance());
+                    //Change icon
+                    imvConfirmPasswordToggle.setImageResource(R.drawable.ic_hide_pass);
+                }else{
+                    edtConfirmPass.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+                    imvConfirmPasswordToggle.setImageResource(R.drawable.ic_show_pass);
                 }
             }
         });

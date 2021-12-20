@@ -22,7 +22,6 @@ public class Processing_MyOrders extends Fragment implements ItemClickListener {
     MyOrdersProcessAdapter myOrdersProcessAdapter;
     ArrayList<MyOrder> myOrder;
 
-    private ItemClickListener clickListener;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

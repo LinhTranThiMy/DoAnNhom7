@@ -14,6 +14,7 @@ import androidx.fragment.app.FragmentTransaction;
 
 public class Cancelled_OrderDetails extends Fragment {
     ImageButton btnClose;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {

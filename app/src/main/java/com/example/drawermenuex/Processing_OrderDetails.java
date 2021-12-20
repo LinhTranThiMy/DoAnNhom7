@@ -23,13 +23,25 @@ public class Processing_OrderDetails extends Fragment {
         //Ẩn actionBar
         ((AppCompatActivity) getActivity()).getSupportActionBar().hide();
         btnClose=view.findViewById(R.id.btnCloseP);
+        btnCancelOrder=view.findViewById(R.id.btnCancelOrder);
         btnClose.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 getParentFragmentManager().popBackStack();
             }
         });
+        btnCancelOrder.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                replaceFragment(new CancelledReasonFragment());
+            }
+        });
         return view;
 
+    }
+    private void replaceFragment(Fragment fragment){
+        FragmentTransaction fragmentTransaction = getParentFragmentManager().beginTransaction();
+        fragmentTransaction.replace(R.id.frame_layout,fragment).addToBackStack(null);
+        fragmentTransaction.commit();
     }
 }
