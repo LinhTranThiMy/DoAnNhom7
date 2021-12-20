@@ -20,7 +20,7 @@ import android.widget.Toast;
 public class ProfilePassword1Fragment extends Fragment {
     ImageButton btnBackPassword1;
     Button btnChangePassword;
-    EditText edtEmail,edtPassword;
+    EditText edtEmail,edtPassword1;
     ImageView imvProfilePassword;
     public static DBHelper DB;
     private View view;
@@ -28,13 +28,27 @@ public class ProfilePassword1Fragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_profile_password1, container, false);
-        edtPassword=view.findViewById(R.id.edtPassword);
+        edtPassword1=view.findViewById(R.id.edtPassword1);
         btnBackPassword1=view.findViewById(R.id.btnBackPassword1);
         btnChangePassword=view.findViewById(R.id.btnChangePassword);
         edtEmail=view.findViewById(R.id.edtEmail);
         imvProfilePassword=view.findViewById(R.id.imvProfilePassword);
         imvProfilePassword.setImageResource(R.drawable.ic_hide_pass);
         DB=new DBHelper(getContext());
+        imvProfilePassword.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(edtPassword1.getTransformationMethod().equals(HideReturnsTransformationMethod.getInstance())){
+                    //If password is visible then Hide it
+                    edtPassword1.setTransformationMethod(PasswordTransformationMethod.getInstance());
+                    //Change icon
+                    imvProfilePassword.setImageResource(R.drawable.ic_hide_pass);
+                }else{
+                    edtPassword1.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+                    imvProfilePassword.setImageResource(R.drawable.ic_show_pass);
+                }
+            }
+        });
         btnBackPassword1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -45,7 +59,7 @@ public class ProfilePassword1Fragment extends Fragment {
             @Override
             public void onClick(View v) {
                 String email=edtEmail.getText().toString();
-                String password=edtPassword.getText().toString();
+                String password=edtPassword1.getText().toString();
                 if(email.equals("")||password.equals("")){
                     Toast.makeText(getContext(), "Please enter your email or password", Toast.LENGTH_SHORT).show();
                 }else{
@@ -54,7 +68,7 @@ public class ProfilePassword1Fragment extends Fragment {
                         Toast.makeText(getContext(), "Successful", Toast.LENGTH_SHORT).show();
                         Bundle bundle= new Bundle();
                         bundle.putString("email",edtEmail.getText().toString());
-                        bundle.putString("password",edtPassword.getText().toString());
+                        bundle.putString("password",edtPassword1.getText().toString());
                         ProfilePassword2Fragment profilePassword2= new ProfilePassword2Fragment();
                         profilePassword2.setArguments(bundle);
                         getParentFragmentManager().beginTransaction().replace(R.id.frame_layout,profilePassword2).commit();
@@ -65,20 +79,7 @@ public class ProfilePassword1Fragment extends Fragment {
             }
 
         });
-        imvProfilePassword.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(edtPassword.getTransformationMethod().equals(HideReturnsTransformationMethod.getInstance())){
-                    //If password is visible then Hide it
-                    edtPassword.setTransformationMethod(PasswordTransformationMethod.getInstance());
-                    //Change icon
-                    imvProfilePassword.setImageResource(R.drawable.ic_hide_pass);
-                }else{
-                    edtPassword.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
-                    imvProfilePassword.setImageResource(R.drawable.ic_show_pass);
-                }
-            }
-        });
+
         return view;
     }
     private void replaceFragment(Fragment fragment) {
