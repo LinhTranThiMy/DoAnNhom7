@@ -3,6 +3,7 @@ package com.example.model;
 import java.io.Serializable;
 
 public class Product implements Serializable {
+    private String key;
     private String productId;
     private String productThumb;
     private String productName;
@@ -14,7 +15,8 @@ public class Product implements Serializable {
     public Product() {
     }
 
-    public Product(String productId, String productThumb, String productName, double productPrice, Float productRating, String productRatingNumber, String productDes) {
+    public Product(String key, String productId, String productThumb, String productName, double productPrice, Float productRating, String productRatingNumber, String productDes) {
+        this.key = key;
         this.productId = productId;
         this.productThumb = productThumb;
         this.productName = productName;
@@ -22,6 +24,14 @@ public class Product implements Serializable {
         this.productRating = productRating;
         this.productRatingNumber = productRatingNumber;
         this.productDes = productDes;
+    }
+
+    public String getKey() {
+        return key;
+    }
+
+    public void setKey(String key) {
+        this.key = key;
     }
 
     public String getProductId() {

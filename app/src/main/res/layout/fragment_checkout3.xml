@@ -9,14 +9,12 @@
     android:orientation="vertical">
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="600dp">
+        android:layout_height="match_parent">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:padding="10dp">
-
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -104,254 +102,97 @@
             android:text=""
             android:textColor="#959292"
             android:textSize="13dp"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_final"
+            android:layout_width="match_parent"
+            android:layout_height="350dp"
+            android:padding="8dp" />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:layout_marginTop="20dp">
-            <ImageView
-                android:layout_width="180dp"
-                android:layout_height="200dp"
-                android:background="#E5E5E5"
-                android:src="@drawable/case12" />
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:layout_marginLeft="10dp">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="FLORAL CASE"
-                    android:textSize="20sp"
-                    android:textColor="@color/black"
-                    android:textStyle="bold"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Apple"
-                    android:textSize="15sp"
-                    android:textColor="@color/black"
-                    android:fontFamily="sans-serif-thin"
-                    android:layout_marginTop="5dp"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Iphone 13 Pro Max"
-                    android:textSize="15sp"
-                    android:textColor="@color/black"
-                    android:fontFamily="sans-serif-thin"
-                    android:layout_marginTop="5dp"/>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal">
-                    <ImageButton
-                        android:layout_width="12dp"
-                        android:layout_height="12dp"
-                        android:background="@drawable/minus"
-                        android:layout_gravity="bottom"
-                        android:layout_marginBottom="10dp"/>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="1"
-                        android:textSize="10dp"
-                        android:layout_gravity="bottom"
-                        android:layout_marginBottom="5dp"
-                        android:layout_marginLeft="2dp"
-                        android:layout_marginRight="2dp"/>
-                    <ImageButton
-                        android:layout_width="12dp"
-                        android:layout_height="12dp"
-                        android:background="@drawable/add"
-                        android:layout_gravity="bottom"
-                        android:layout_marginBottom="10dp"/>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="150.000đ"
-                        android:layout_gravity="bottom"
-                        android:layout_marginLeft="40dp"
-                        android:textSize="20sp"
-                        android:textColor="@color/black"
-                        android:textStyle="bold"/>
-                </LinearLayout>
-            </LinearLayout>
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:layout_marginTop="20dp">
-            <ImageView
-                android:layout_width="180dp"
-                android:layout_height="200dp"
-                android:background="#E5E5E5"
-                android:src="@drawable/case8" />
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:layout_marginLeft="10dp">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="MOON CASE"
-                    android:textSize="20sp"
-                    android:textColor="@color/black"
-                    android:textStyle="bold"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Apple"
-                    android:textSize="15sp"
-                    android:textColor="@color/black"
-                    android:fontFamily="sans-serif-thin"
-                    android:layout_marginTop="5dp"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Iphone 13 Pro Max"
-                    android:textSize="15sp"
-                    android:textColor="@color/black"
-                    android:fontFamily="sans-serif-thin"
-                    android:layout_marginTop="5dp"/>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal">
-                    <ImageButton
-                        android:layout_width="12dp"
-                        android:layout_height="12dp"
-                        android:background="@drawable/minus"
-                        android:layout_gravity="bottom"
-                        android:layout_marginBottom="10dp"/>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="1"
-                        android:textSize="10dp"
-                        android:layout_gravity="bottom"
-                        android:layout_marginBottom="5dp"
-                        android:layout_marginLeft="2dp"
-                        android:layout_marginRight="2dp"/>
-                    <ImageButton
-                        android:layout_width="12dp"
-                        android:layout_height="12dp"
-                        android:background="@drawable/add"
-                        android:layout_gravity="bottom"
-                        android:layout_marginBottom="10dp"/>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="200.000đ"
-                        android:layout_gravity="bottom"
-                        android:layout_marginLeft="40dp"
-                        android:textSize="20sp"
-                        android:textColor="@color/black"
-                        android:textStyle="bold"/>
-                </LinearLayout>
-            </LinearLayout>
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginRight="20dp">
+            android:weightSum="5"
+            android:layout_below="@+id/recycler_cart"
+            android:paddingLeft="12dp"
+            android:paddingRight="12dp"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
             <TextView
-                android:layout_width="wrap_content"
+                android:id="@+id/txtSubTotalTitle"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_weight="2"
                 android:text="Subtotal"
-                android:layout_marginLeft="20dp"
-                android:textSize="17sp"
-                android:fontFamily="sans-serif-thin"
-                android:textColor="@color/black"
-                android:layout_marginTop="5dp"/>
+                android:textSize="25sp"
+                android:textColor="@color/black"/>
             <TextView
-                android:layout_width="wrap_content"
+                android:id="@+id/txtSubTotal"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="350.000đ"
-                android:layout_marginLeft="215dp"
-                android:textColor="#9C9A9A"
-                android:textSize="15sp"
-                android:textStyle="bold"
-                android:layout_marginTop="5dp"/>
+                android:gravity="end"
+                android:layout_weight="3"
+                android:text="Subtotal amount"
+                android:textSize="25sp" />
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginRight="20dp">
+            android:weightSum="5"
+            android:layout_below="@+id/recycler_cart"
+            android:paddingLeft="12dp"
+            android:paddingRight="12dp"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
             <TextView
-                android:layout_width="wrap_content"
+                android:id="@+id/txtShippingTitle"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_weight="2"
                 android:text="Shipping"
-                android:layout_marginLeft="20dp"
-                android:textSize="17sp"
-                android:fontFamily="sans-serif-thin"
-                android:textColor="@color/black"
-                android:layout_marginTop="5dp"/>
+                android:textSize="25sp"
+                android:textColor="@color/black"/>
             <TextView
-                android:layout_width="wrap_content"
+                android:id="@+id/txtShipping"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="30.000đ"
-                android:layout_marginLeft="220dp"
-                android:textColor="#9C9A9A"
-                android:textSize="15sp"
-                android:textStyle="bold"
-                android:layout_marginTop="5dp"/>
+                android:gravity="end"
+                android:layout_weight="3"
+                android:text="Shipping amount"
+                android:textSize="25sp" />
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:weightSum="5"
+            android:layout_below="@+id/recycler_cart"
+            android:paddingLeft="12dp"
+            android:paddingRight="12dp"
             android:orientation="horizontal"
-            android:layout_marginRight="20dp">
+            android:layout_marginTop="10dp">
             <TextView
-                android:layout_width="wrap_content"
+                android:id="@+id/txtTotalName"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="Discount"
-                android:layout_marginLeft="20dp"
-                android:textSize="15sp"
-                android:fontFamily="sans-serif-thin"
-                android:textColor="@color/black"
-                android:layout_marginTop="5dp"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="215dp"
-                android:textColor="#A62E45"
-                android:textSize="17sp"
-                android:textStyle="bold"
-                android:layout_marginTop="5dp"/>
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginRight="20dp">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_weight="2"
                 android:text="Total"
-                android:layout_marginLeft="20dp"
-                android:textSize="15sp"
-                android:textColor="@color/black"
-                android:layout_marginTop="5dp"
-                android:textStyle="bold"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="380.000đ"
-                android:layout_marginLeft="240dp"
-                android:textColor="#9C9A9A"
-                android:textSize="15sp"
+                android:textSize="25sp"
                 android:textStyle="bold"
-                android:layout_marginTop="5dp"/>
+                android:textColor="@color/black"/>
+            <TextView
+                android:id="@+id/txtTotal"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                android:layout_weight="3"
+                android:text="TOTAL AMOUNT"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:textColor="@color/black"/>
         </LinearLayout>
         <Button
             android:id="@+id/btnConfirmCheckOut3"
