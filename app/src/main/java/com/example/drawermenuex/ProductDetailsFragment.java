@@ -128,6 +128,7 @@ public class ProductDetailsFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 addToCart();
+                //Show Toast
             }
         });
 
@@ -160,8 +161,11 @@ public class ProductDetailsFragment extends Fragment {
 
                             userCart.child("NUMBER")
                                     .updateChildren(updateData)
-                                    .addOnSuccessListener(aVoid -> {
-                                        cartLoadListener.onCartLoadFailed("Add To Cart Success!");
+                                    .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                        @Override
+                                        public void onSuccess(Void unused) {
+                                            Toast.makeText(getContext(), "Success", Toast.LENGTH_SHORT).show();
+                                        }
                                     })
                                     .addOnFailureListener(new OnFailureListener() {
                                         @Override

@@ -1,5 +1,6 @@
 package com.example.drawermenuex;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -126,16 +127,19 @@ public class Checkout3Fragment extends Fragment implements ICartLoadListener {
             @Override
             public void onClick(View v) {
 //                replaceFragment(new CheckoutConfirmFragment());
-                CheckoutConfirmFragment checkoutConfirmFragment=new CheckoutConfirmFragment();
-                getFragmentManager().beginTransaction().replace(R.id.layout_Checkout,checkoutConfirmFragment).commit();
+//                CheckoutConfirmFragment checkoutConfirmFragment=new CheckoutConfirmFragment();
+//                getFragmentManager().beginTransaction().replace(R.id.layout_Checkout,checkoutConfirmFragment).commit();
+                Intent intent=new Intent(getActivity(),ConfirmActivity.class);
+                startActivity(intent);
             }
         });
         btnBackCheckOut3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 //                replaceFragment(new Checkout2Fragment());
-                Checkout2Fragment checkout2Fragment=new Checkout2Fragment();
-                getFragmentManager().beginTransaction().replace(R.id.layout_Checkout,checkout2Fragment).commit();
+//                Checkout2Fragment checkout2Fragment=new Checkout2Fragment();
+//                getFragmentManager().beginTransaction().replace(R.id.layout_Checkout,checkout2Fragment).commit();
+                getParentFragmentManager().popBackStackImmediate();
             }
         });
     }
