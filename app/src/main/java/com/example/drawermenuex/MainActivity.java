@@ -1,5 +1,7 @@
 package com.example.drawermenuex;
 
+import static com.example.util.Constant.USER;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -8,10 +10,12 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.example.util.Constant;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 import com.google.android.material.navigation.NavigationView;
@@ -21,12 +25,15 @@ public class MainActivity extends AppCompatActivity {
     DrawerLayout drawerLayoutmain;
     NavigationView navigationbarmain;
     BottomNavigationView bottomNavigationView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         linkViews();
         actionBar();
+
+
         bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -54,12 +61,17 @@ public class MainActivity extends AppCompatActivity {
                         }
                         break;
                     case R.id.account:
-                            replaceFragment(new AccountFragment());
-                            bottomNavigationView.getMenu().findItem(R.id.account).setChecked(true);
-                            int size2 = navigationbarmain.getMenu().size();
-                            for (int i = 0; i < size2; i++) {
-                                navigationbarmain.getMenu().getItem(i).setChecked(false);
-                            }
+                        String data = getIntent().getStringExtra(USER);
+                        Bundle bundle = new Bundle();
+                        bundle.putString(USER, data);
+                        AccountFragment fragInfo = new AccountFragment();
+                        fragInfo.setArguments(bundle);
+                        replaceFragment(new AccountFragment(data));
+                        bottomNavigationView.getMenu().findItem(R.id.account).setChecked(true);
+                        int size2 = navigationbarmain.getMenu().size();
+                        for (int i = 0; i < size2; i++) {
+                            navigationbarmain.getMenu().getItem(i).setChecked(false);
+                        }
                         break;
 
                 }

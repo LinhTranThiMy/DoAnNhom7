@@ -1,5 +1,7 @@
 package com.example.drawermenuex;
 
+import static com.example.util.Constant.USER;
+
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -14,8 +16,17 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import com.example.util.Constant;
+
 public class AccountFragment extends Fragment {
     Button btnProfile,btnPoints,btnMyOrder,btnLogOut;
+    String mPassUser;
+    public AccountFragment(String passUser) {
+        this.mPassUser = passUser;
+    }
+
+    public AccountFragment() {
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -25,13 +36,30 @@ public class AccountFragment extends Fragment {
         ((AppCompatActivity) getActivity()).getSupportActionBar().show();
 
         btnProfile=view.findViewById(R.id.btnProfile);
+//        Bundle bundle = getArguments();
+//        if (bundle != null) {
+//            String data = getArguments().getString(USER);
+//            btnProfile.setText(data);
+//        }
+//        else btnProfile.setText("error");
+
+        btnProfile.setText(mPassUser);
+
         btnPoints=view.findViewById(R.id.btnPoints);
         btnMyOrder=view.findViewById(R.id.btnMyOrder);
         btnLogOut=view.findViewById(R.id.btnLogOut);
         btnProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                replaceFragment( new ProfileFragment());
+                String data = getArguments().getString(USER);
+                AppCompatActivity activity = (AppCompatActivity) v.getContext();
+                ProfileFragment fragment = new ProfileFragment();
+                activity.getSupportFragmentManager().beginTransaction().replace(R.id.frame_layout,fragment).addToBackStack(null).commit();;
+                Bundle bundle = new Bundle();
+                bundle.putSerializable(USER,data);
+                fragment.setArguments(bundle);
+
+//                replaceFragment( new ProfileFragment(mPassUser));
             }
         });
         btnLogOut.setOnClickListener(new View.OnClickListener() {
