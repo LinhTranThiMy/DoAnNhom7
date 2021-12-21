@@ -18,12 +18,12 @@
         <activity
             android:name=".CheckoutActivity"
             android:exported="true" />
-        <activity
-            android:name=".ProfileMyAccount2"
-            android:exported="true" />
-        <activity
-            android:name=".ProfileMyAccount1"
-            android:exported="true" />
+<!--        <activity-->
+<!--            android:name=".ProfileMyAccount2"-->
+<!--            android:exported="true" />-->
+<!--        <activity-->
+<!--            android:name=".ProfileMyAccount1"-->
+<!--            android:exported="true" />-->
         <activity
             android:name=".SplashScreen"
             android:exported="true">
