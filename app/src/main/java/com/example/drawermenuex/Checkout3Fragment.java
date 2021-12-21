@@ -18,6 +18,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.adapter.MyCartAdapter;
+import com.example.adapter.MyFinalAdapter;
 import com.example.interfaces.ICartLoadListener;
 import com.example.model.CartModel;
 import com.example.model.Product;
@@ -164,7 +165,7 @@ public class Checkout3Fragment extends Fragment implements ICartLoadListener {
         txtSubTotal.setText(new StringBuilder().append(sum));
         txtTotal.setText(new StringBuilder("").append(sum2));
         txtShipping.setText(new StringBuilder("").append(sum1));
-        MyCartAdapter adapter = new MyCartAdapter(getContext(), cartModelList);
+        MyFinalAdapter adapter = new MyFinalAdapter(getContext(), cartModelList);
         recycler_final.setAdapter(adapter);
         Toast.makeText(getContext(), "Success!", Toast.LENGTH_SHORT).show();
     }

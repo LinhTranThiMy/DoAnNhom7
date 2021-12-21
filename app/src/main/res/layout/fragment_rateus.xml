@@ -25,9 +25,9 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text="RATE US"
-            android:textStyle="bold"
             android:textSize="24sp"
-            android:textColor="@color/black"/>
+            android:textColor="@color/black"
+            android:fontFamily="@font/abhaya_libre_bold"/>
     </androidx.appcompat.widget.Toolbar>
 
     <RatingBar

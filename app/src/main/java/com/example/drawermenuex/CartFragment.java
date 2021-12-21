@@ -42,12 +42,13 @@ public class CartFragment extends Fragment implements ICartLoadListener {
     LinearLayout mainLayout;
     @BindView(R.id.txtSubTotal)
     TextView txtSubTotal;
-    @BindView(R.id.txtTotal)
-    TextView txtTotal;
     @BindView(R.id.txtShipping)
     TextView txtShipping;
+    @BindView(R.id.txtTotal)
+    TextView txtTotal;
     @BindView(R.id.btnCheckOut)
     Button btnCheckOut;
+
 
     ICartLoadListener cartLoadListener;
     private View view;
@@ -132,10 +133,10 @@ public class CartFragment extends Fragment implements ICartLoadListener {
         {
             sum1 += 30000;
         }
-        double sum2 = sum + sum1;
+       double sum2 = sum + sum1;
+        txtShipping.setText(new StringBuilder().append(sum1));
         txtSubTotal.setText(new StringBuilder().append(sum));
-        txtTotal.setText(new StringBuilder("").append(sum2));
-        txtShipping.setText(new StringBuilder("").append(sum1));
+        txtTotal.setText(new StringBuilder().append(sum2));
         MyCartAdapter adapter = new MyCartAdapter(getContext(), cartModelList);
         recyclerCart.setAdapter(adapter);
     }
