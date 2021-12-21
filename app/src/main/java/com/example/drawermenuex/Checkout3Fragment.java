@@ -136,19 +136,18 @@ public class Checkout3Fragment extends Fragment implements ICartLoadListener {
         btnBackCheckOut3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                replaceFragment(new Checkout2Fragment());
-//                Checkout2Fragment checkout2Fragment=new Checkout2Fragment();
-//                getFragmentManager().beginTransaction().replace(R.id.layout_Checkout,checkout2Fragment).commit();
-                getParentFragmentManager().popBackStackImmediate();
+                Checkout2Fragment checkout2Fragment=new Checkout2Fragment();
+                getFragmentManager().beginTransaction().replace(R.id.layout_Checkout,checkout2Fragment).commit();
+     //           getParentFragmentManager().popBackStackImmediate();
             }
         });
     }
 
-    private void replaceFragment(Fragment fragment) {
-        FragmentTransaction fragmentTransaction= getParentFragmentManager().beginTransaction();
-        fragmentTransaction.replace(R.id.frame_layout,fragment);
-        fragmentTransaction.commit();
-    }
+//    private void replaceFragment(Fragment fragment) {
+//        FragmentTransaction fragmentTransaction= getParentFragmentManager().beginTransaction();
+//        fragmentTransaction.replace(R.id.frame_layout,fragment);
+//        fragmentTransaction.commit();
+//    }
 
     @Override
     public void onCartLoadSuccess(List<CartModel> cartModelList) {

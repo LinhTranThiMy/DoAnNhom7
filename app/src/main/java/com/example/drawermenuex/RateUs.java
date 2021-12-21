@@ -34,8 +34,8 @@ public class RateUs extends Fragment {
 
     Button btnCamera, btnRateUs;
     ImageButton btnBackRate;
-    ImageView imvPhoto=null;
-    EditText edtComment=null;
+    ImageView imvPhoto;
+    EditText edtComment;
     RatingBar ratingStar;
 
     BottomSheetDialog sheetDialog;
@@ -106,10 +106,11 @@ public class RateUs extends Fragment {
             public void onClick(View v) {
                 //Chỗ này chưa được ai cíu dùm em!!!!
 
-                if(edtComment.toString().equals("") || imvPhoto.getDrawable()==null) {
+                if(edtComment.equals("") || imvPhoto.getDrawable()==null) {
                     Toast.makeText(getActivity(), "Please fill all fields", Toast.LENGTH_SHORT).show();
                 }else{
                     Toast.makeText(getActivity(),"Rate success!",Toast.LENGTH_SHORT).show();
+                    replaceFragment(new MyOrderFragment());
                 }
             }
         });
@@ -152,6 +153,11 @@ public class RateUs extends Fragment {
             sheetDialog = new BottomSheetDialog(getActivity());
             sheetDialog.setContentView(view); //truyền vô view bottom sheet đã nạp ở trên
         }
+    }
+    private void replaceFragment(Fragment fragment) {
+        FragmentTransaction fragmentTransaction = getParentFragmentManager().beginTransaction();
+        fragmentTransaction.replace(R.id.frame_layout, fragment);
+        fragmentTransaction.commit();
     }
 
 }

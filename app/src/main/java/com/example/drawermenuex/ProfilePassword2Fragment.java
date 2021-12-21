@@ -5,6 +5,7 @@ import android.os.Bundle;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.text.TextUtils;
 import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;
 import android.view.LayoutInflater;
@@ -66,10 +67,11 @@ public class ProfilePassword2Fragment extends Fragment {
 //                    if (passNew.equals("") || cfPass.equals("")) {
 //                    Toast.makeText(getContext(), "Please enter all fields", Toast.LENGTH_SHORT).show();
 //                    } else {
-                    Boolean updatepass = DB.editPassword(email,passNew);
+                    Boolean updatepass = DB.updatePassword(email,passNew);
                     if (updatepass == true) {
-                        replaceFragment(new ProfileFragment());
                         Toast.makeText(getContext(), "Password update successfully", Toast.LENGTH_SHORT).show();
+                        replaceFragment(new ProfileFragment());
+
                     } else {
                         Toast.makeText(getContext(), "Password not update ", Toast.LENGTH_SHORT).show();
                     }
@@ -77,6 +79,7 @@ public class ProfilePassword2Fragment extends Fragment {
                 } else {
                     Toast.makeText(getContext(), "Password not match ", Toast.LENGTH_SHORT).show();
                 }
+
             }
         });
         imvNewPass.setOnClickListener(new View.OnClickListener() {

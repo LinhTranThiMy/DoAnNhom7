@@ -9,6 +9,7 @@ import android.text.method.PasswordTransformationMethod;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -17,7 +18,8 @@ public class ResetPasswordActivity extends AppCompatActivity {
     EditText edtPass,edtConfirmPass;
     Button btnResetPassword;
     TextView txtEmail;
-    ImageView imvResetPasswordToggle, imvConfirmPasswordToggle;
+
+    ImageView imvResetPasswordToggle, imvConfirmPasswordToggle,imvBackReset;
     public static DBHelper DB;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +34,7 @@ public class ResetPasswordActivity extends AppCompatActivity {
         edtConfirmPass=findViewById(R.id.edtConfirmPass);
         txtEmail= findViewById(R.id.txtEmail);
         btnResetPassword=findViewById(R.id.btnResetPassword);
+        imvBackReset=findViewById(R.id.imvBackReset);
         imvConfirmPasswordToggle=findViewById(R.id.imvConfirmPasswordToggle);
         imvResetPasswordToggle=findViewById(R.id.imvResetPasswordToggle);
         imvResetPasswordToggle.setImageResource(R.drawable.ic_hide_pass);
@@ -93,6 +96,13 @@ public class ResetPasswordActivity extends AppCompatActivity {
                     edtConfirmPass.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
                     imvConfirmPasswordToggle.setImageResource(R.drawable.ic_show_pass);
                 }
+            }
+        });
+        imvBackReset.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(ResetPasswordActivity.this,ForgotPasswordActivity.class);
+                startActivity(intent);
             }
         });
     }
