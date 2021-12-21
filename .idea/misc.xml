@@ -79,10 +79,31 @@
         <entry key="..\:/DoAn1/DoAnNhom7/app/src/main/res/layout/fragment_profile_my_account1.xml" value="0.1" />
         <entry key="..\:/DoAn1/DoAnNhom7/app/src/main/res/layout/fragment_profile_password1.xml" value="0.1" />
         <entry key="..\:/DoAn1/DoAnNhom7/app/src/main/res/layout/fragment_profile_password2.xml" value="0.18333333333333332" />
+        <entry key="..\:/Users/HP/Documents/DoAnNhom7/app/src/main/res/font/abhaya_libre.xml" value="0.1625" />
+        <entry key="..\:/Users/HP/Documents/DoAnNhom7/app/src/main/res/layout/activity_cancelled_order_details.xml" value="0.178125" />
+        <entry key="..\:/Users/HP/Documents/DoAnNhom7/app/src/main/res/layout/activity_cancelled_reason.xml" value="0.178125" />
+        <entry key="..\:/Users/HP/Documents/DoAnNhom7/app/src/main/res/layout/activity_checkout.xml" value="0.1203125" />
+        <entry key="..\:/Users/HP/Documents/DoAnNhom7/app/src/main/res/layout/activity_delivered_order_details.xml" value="0.1203125" />
+        <entry key="..\:/Users/HP/Documents/DoAnNhom7/app/src/main/res/layout/activity_forgot_password.xml" value="0.1203125" />
+        <entry key="..\:/Users/HP/Documents/DoAnNhom7/app/src/main/res/layout/activity_main.xml" value="0.1203125" />
+        <entry key="..\:/Users/HP/Documents/DoAnNhom7/app/src/main/res/layout/activity_processing_order_details.xml" value="0.178125" />
+        <entry key="..\:/Users/HP/Documents/DoAnNhom7/app/src/main/res/layout/activity_profile_my_account1.xml" value="0.178125" />
+        <entry key="..\:/Users/HP/Documents/DoAnNhom7/app/src/main/res/layout/activity_reset_password.xml" value="0.12552083333333333" />
+        <entry key="..\:/Users/HP/Documents/DoAnNhom7/app/src/main/res/layout/activity_splash_screen.xml" value="0.1625" />
+        <entry key="..\:/Users/HP/Documents/DoAnNhom7/app/src/main/res/layout/fragment_aboutus.xml" value="0.1203125" />
+        <entry key="..\:/Users/HP/Documents/DoAnNhom7/app/src/main/res/layout/fragment_accessories.xml" value="0.1203125" />
+        <entry key="..\:/Users/HP/Documents/DoAnNhom7/app/src/main/res/layout/fragment_airpods_case.xml" value="0.1203125" />
+        <entry key="..\:/Users/HP/Documents/DoAnNhom7/app/src/main/res/layout/fragment_all_accesories.xml" value="0.1203125" />
         <entry key="..\:/Users/HP/Documents/DoAnNhom7/app/src/main/res/layout/fragment_cart.xml" value="0.10914855072463768" />
+        <entry key="..\:/Users/HP/Documents/DoAnNhom7/app/src/main/res/layout/fragment_cases.xml" value="0.1203125" />
         <entry key="..\:/Users/HP/Documents/DoAnNhom7/app/src/main/res/layout/fragment_checkout3.xml" value="0.178125" />
+        <entry key="..\:/Users/HP/Documents/DoAnNhom7/app/src/main/res/layout/fragment_collection.xml" value="0.1" />
+        <entry key="..\:/Users/HP/Documents/DoAnNhom7/app/src/main/res/layout/fragment_home.xml" value="0.1625" />
+        <entry key="..\:/Users/HP/Documents/DoAnNhom7/app/src/main/res/layout/fragment_search.xml" value="0.178125" />
         <entry key="..\:/Users/HP/Documents/DoAnNhom7/app/src/main/res/layout/item_cart.xml" value="0.178125" />
-        <entry key="..\:/Users/HP/Documents/DoAnNhom7/app/src/main/res/layout/item_final.xml" value="0.178125" />
+        <entry key="..\:/Users/HP/Documents/DoAnNhom7/app/src/main/res/layout/item_final.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/HP/Documents/DoAnNhom7/app/src/main/res/layout/menu_header.xml" value="0.1203125" />
+        <entry key="..\:/Users/HP/Documents/DoAnNhom7/app/src/main/res/menu/main_menu.xml" value="0.1203125" />
         <entry key="..\:/nckh/DrawerMenuEx/app/src/main/res/drawable/custom_button.xml" value="0.19583333333333333" />
         <entry key="..\:/nckh/DrawerMenuEx/app/src/main/res/layout/activity_filter_fragment.xml" value="0.1796875" />
         <entry key="..\:/nckh/DrawerMenuEx/app/src/main/res/layout/activity_main.xml" value="0.1" />

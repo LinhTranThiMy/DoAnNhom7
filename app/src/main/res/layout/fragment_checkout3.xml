@@ -9,7 +9,7 @@
     android:orientation="vertical">
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="500dp">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -125,8 +125,8 @@
                 android:layout_gravity="end"
                 android:layout_weight="2"
                 android:text="Subtotal"
-                android:textSize="25sp"
-                android:textColor="@color/black"/>
+                android:textSize="22sp"
+                android:textColor="@color/black" />
             <TextView
                 android:id="@+id/txtSubTotal"
                 android:layout_width="0dp"
@@ -134,7 +134,7 @@
                 android:gravity="end"
                 android:layout_weight="3"
                 android:text="Subtotal amount"
-                android:textSize="25sp" />
+                android:textSize="22sp" />
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
@@ -152,7 +152,7 @@
                 android:layout_gravity="end"
                 android:layout_weight="2"
                 android:text="Shipping"
-                android:textSize="25sp"
+                android:textSize="22sp"
                 android:textColor="@color/black"/>
             <TextView
                 android:id="@+id/txtShipping"
@@ -161,7 +161,33 @@
                 android:gravity="end"
                 android:layout_weight="3"
                 android:text="Shipping amount"
-                android:textSize="25sp" />
+                android:textSize="22sp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="5"
+            android:layout_below="@+id/recycler_cart"
+            android:paddingLeft="12dp"
+            android:paddingRight="12dp"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_weight="3"
+                android:text="Promo discount"
+                android:textSize="22sp"
+                android:textColor="@color/black"/>
+            <TextView
+                android:id="@+id/txtPromo"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                android:layout_weight="2"
+                android:text="0.0"
+                android:textSize="22sp" />
         </LinearLayout>
 
         <LinearLayout
@@ -180,7 +206,7 @@
                 android:layout_gravity="end"
                 android:layout_weight="2"
                 android:text="Total"
-                android:textSize="25sp"
+                android:textSize="22sp"
                 android:textStyle="bold"
                 android:textColor="@color/black"/>
             <TextView
@@ -190,35 +216,34 @@
                 android:gravity="end"
                 android:layout_weight="3"
                 android:text="TOTAL AMOUNT"
-                android:textSize="25sp"
+                android:textSize="22sp"
                 android:textStyle="bold"
                 android:textColor="@color/black"/>
         </LinearLayout>
-        <Button
-            android:id="@+id/btnConfirmCheckOut3"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:backgroundTint="#9D1B34"
-            android:text="Confirm"
-            android:textSize="18sp"
-            android:textColor="@color/white"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginTop="20dp"/>
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btnBackCheckOut3"
-            android:layout_width="370dp"
-            android:layout_height="60dp"
-            android:layout_gravity="center"
-            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-            app:strokeColor="#9D1B34"
-            app:strokeWidth="2dp"
-            android:text="BACK"
-            android:textColor="#9D1B34"
-            android:textSize="20sp"/>
-
     </LinearLayout>
     </androidx.core.widget.NestedScrollView>
+    <Button
+        android:id="@+id/btnConfirmCheckOut3"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:backgroundTint="#9D1B34"
+        android:text="Confirm"
+        android:textSize="18sp"
+        android:textColor="@color/white"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="20dp"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnBackCheckOut3"
+        android:layout_width="370dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        app:strokeColor="#9D1B34"
+        app:strokeWidth="2dp"
+        android:text="BACK"
+        android:textColor="#9D1B34"
+        android:textSize="20sp"/>
 
 </LinearLayout>
