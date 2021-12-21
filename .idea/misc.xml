@@ -77,6 +77,18 @@
         <entry key="..\:/DoAn1/DoAnNhom7/app/src/main/res/layout/fragment_profile_my_account1.xml" value="0.1" />
         <entry key="..\:/DoAn1/DoAnNhom7/app/src/main/res/layout/fragment_profile_password1.xml" value="0.1" />
         <entry key="..\:/DoAn1/DoAnNhom7/app/src/main/res/layout/fragment_profile_password2.xml" value="0.18333333333333332" />
+        <entry key="..\:/Projects/Rice Job/FukiApp/DoAnNhom7/app/src/main/res/layout/activity_login.xml" value="0.18819655521783182" />
+        <entry key="..\:/Projects/Rice Job/FukiApp/DoAnNhom7/app/src/main/res/layout/activity_main.xml" value="0.3845108695652174" />
+        <entry key="..\:/Projects/Rice Job/FukiApp/DoAnNhom7/app/src/main/res/layout/activity_profile_my_account1.xml" value="0.18819655521783182" />
+        <entry key="..\:/Projects/Rice Job/FukiApp/DoAnNhom7/app/src/main/res/layout/activity_profile_my_account2.xml" value="0.18819655521783182" />
+        <entry key="..\:/Projects/Rice Job/FukiApp/DoAnNhom7/app/src/main/res/layout/fragment_account.xml" value="0.3804347826086957" />
+        <entry key="..\:/Projects/Rice Job/FukiApp/DoAnNhom7/app/src/main/res/layout/fragment_detail_account.xml" value="0.3804347826086957" />
+        <entry key="..\:/Projects/Rice Job/FukiApp/DoAnNhom7/app/src/main/res/layout/fragment_edit_profile.xml" value="0.3804347826086957" />
+        <entry key="..\:/Projects/Rice Job/FukiApp/DoAnNhom7/app/src/main/res/layout/fragment_home.xml" value="0.3804347826086957" />
+        <entry key="..\:/Projects/Rice Job/FukiApp/DoAnNhom7/app/src/main/res/layout/fragment_point.xml" value="0.3804347826086957" />
+        <entry key="..\:/Projects/Rice Job/FukiApp/DoAnNhom7/app/src/main/res/layout/fragment_profile.xml" value="0.18819655521783182" />
+        <entry key="..\:/Projects/Rice Job/FukiApp/DoAnNhom7/app/src/main/res/layout/fragment_profile_password1.xml" value="0.3804347826086957" />
+        <entry key="..\:/Projects/Rice Job/FukiApp/DoAnNhom7/app/src/main/res/layout/fragment_profile_password2.xml" value="0.3804347826086957" />
         <entry key="..\:/nckh/DrawerMenuEx/app/src/main/res/drawable/custom_button.xml" value="0.19583333333333333" />
         <entry key="..\:/nckh/DrawerMenuEx/app/src/main/res/layout/activity_filter_fragment.xml" value="0.1796875" />
         <entry key="..\:/nckh/DrawerMenuEx/app/src/main/res/layout/activity_main.xml" value="0.1" />
@@ -92,7 +104,7 @@
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

@@ -1,5 +1,7 @@
 package com.example.drawermenuex;
 
+import static com.example.util.Constant.USER;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -8,6 +10,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -27,6 +30,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         linkViews();
         actionBar();
+
+        String user = getIntent().getStringExtra(USER);
         bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -54,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
                         }
                         break;
                     case R.id.account:
-                            replaceFragment(new AccountFragment());
+                            replaceFragment(new AccountFragment(user));
                             bottomNavigationView.getMenu().findItem(R.id.account).setChecked(true);
                             int size2 = navigationbarmain.getMenu().size();
                             for (int i = 0; i < size2; i++) {

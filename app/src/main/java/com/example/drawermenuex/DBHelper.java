@@ -114,16 +114,16 @@ public class DBHelper extends SQLiteOpenHelper {
         return cursor;
 
     }
-    public Boolean updateuserdata( String fullName, String username, String email, String birthday) {
+    public Boolean updateuserdata(String user, String fullName, String username, String email, String dob) {
         SQLiteDatabase DB = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put("fullname", fullName);
         contentValues.put("username", username);
         contentValues.put("email", email);
-        contentValues.put("birthday", birthday);
-        Cursor cursor = DB.rawQuery("Select * from users where username = ?", new String[]{username});
+        contentValues.put("birthday", dob);
+        Cursor cursor = DB.rawQuery("Select * from users where username = ?", new String[]{user});
         if (cursor.getCount() > 0) {
-            long result = DB.update("users", contentValues, "username=?", new String[]{username});
+            long result = DB.update("users", contentValues, "username=?", new String[]{user});
             if (result == -1) {
                 return false;
             } else {

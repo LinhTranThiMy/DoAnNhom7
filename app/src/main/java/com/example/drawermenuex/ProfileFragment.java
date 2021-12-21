@@ -1,5 +1,7 @@
 package com.example.drawermenuex;
 
+import static com.example.util.Constant.USER;
+
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -17,6 +19,13 @@ import android.widget.ImageButton;
 public class ProfileFragment extends Fragment {
     Button btnMyAccount,btnPassword;
     ImageButton btnBackProfile;
+    String mPassUser;
+    public ProfileFragment(String passUser) {
+        this.mPassUser = passUser;
+    }
+    public ProfileFragment() {
+    }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -30,8 +39,10 @@ public class ProfileFragment extends Fragment {
         btnMyAccount.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent= new Intent(getContext(),ProfileMyAccount1.class);
-                startActivity(intent);
+                replaceFragment(new DetailAccountFragment(mPassUser));
+//                Intent intent= new Intent(getContext(),ProfileMyAccount1.class);
+//                intent.putExtra(USER, mPassUser);
+//                startActivity(intent);
             }
         });
         btnPassword.setOnClickListener(new View.OnClickListener() {

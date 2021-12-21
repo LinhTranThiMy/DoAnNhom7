@@ -16,6 +16,13 @@ import android.widget.Button;
 
 public class AccountFragment extends Fragment {
     Button btnProfile,btnPoints,btnMyOrder,btnLogOut;
+    String mPassUser;
+    public AccountFragment(String passUser) {
+        this.mPassUser = passUser;
+    }
+
+    public AccountFragment() {
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -31,7 +38,7 @@ public class AccountFragment extends Fragment {
         btnProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                replaceFragment( new ProfileFragment());
+                replaceFragment( new ProfileFragment(mPassUser));
             }
         });
         btnLogOut.setOnClickListener(new View.OnClickListener() {
