@@ -1,5 +1,7 @@
 package com.example.drawermenuex;
 
+import static com.example.util.Constant.USER;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -13,6 +15,7 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+import com.example.util.Constant;
 
 public class LoginActivity extends AppCompatActivity {
     EditText edtUsername,edtPassword;
@@ -93,6 +96,7 @@ public class LoginActivity extends AppCompatActivity {
             if (checkaccount==true){
                 Toast.makeText(LoginActivity.this, "Sign in successful", Toast.LENGTH_SHORT).show();
                 Intent intent= new Intent(getApplicationContext(),MainActivity.class);
+                intent.putExtra(USER, username);
                 startActivity(intent);
             }else {
                 Toast.makeText(LoginActivity.this, "Invalid credential", Toast.LENGTH_SHORT).show();
