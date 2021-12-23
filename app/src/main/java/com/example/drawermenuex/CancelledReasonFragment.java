@@ -6,6 +6,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.Spinner;
 
 import androidx.fragment.app.Fragment;
@@ -15,6 +17,7 @@ import java.util.ArrayList;
 
 public class CancelledReasonFragment extends Fragment {
     Button btnSubmit;
+    ImageButton btnBackReason;
     Spinner spCancelRequest;
     ArrayList<String> reasons;
     ArrayAdapter<String> adapter;
@@ -33,6 +36,8 @@ public class CancelledReasonFragment extends Fragment {
     private void linkViews() {
         spCancelRequest = view.findViewById(R.id.spCancelRequest);
         btnSubmit=view.findViewById(R.id.btnSubmit);
+        btnBackReason=view.findViewById(R.id.btnBackReason);
+
     }
 
     private void addEvents() {
@@ -40,6 +45,12 @@ public class CancelledReasonFragment extends Fragment {
             @Override
             public void onClick(View v) {
             replaceFragment(new HomeFragment());
+            }
+        });
+        btnBackReason.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getParentFragmentManager().popBackStack();
             }
         });
     }
@@ -62,7 +73,7 @@ public class CancelledReasonFragment extends Fragment {
     }
     private void replaceFragment(Fragment fragment){
         FragmentTransaction fragmentTransaction = getParentFragmentManager().beginTransaction();
-        fragmentTransaction.replace(R.id.frame_layout,fragment);
+        fragmentTransaction.replace(R.id.frame_layout,fragment).addToBackStack(null);
         fragmentTransaction.commit();
     }
 }

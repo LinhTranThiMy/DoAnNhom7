@@ -10,143 +10,156 @@
         android:background="#9E0031">
     </androidx.appcompat.widget.Toolbar>
 
-    <LinearLayout
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="190dp"
-            android:src="@drawable/banner1"
-            />
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:paddingHorizontal="10dp"
-            android:text="Giới thiệu"
-            android:textColor="#000000"
-            android:textSize="18sp"
-            android:textStyle="bold" />
+        android:layout_height="590dp">
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="#8F000000"/>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Fuki là cửa hàng bán phụ kiện điện thoại, và các thiết bị điện tử khác. Đến với Fuki, bạn sẽ đứng trước vô vàn sự lựa chọn như ốp lưng, bảo vệ tai nghe, cáp sạc, kính cường lực....
-Fuki luôn mang đến những sản phẩm mới và hợp thời nhất. Bên cạnh đó, Fuki cam kết đi đầu trong chất lượng sản phẩm song song với ưu đãi giá cả vô cùng hợp lí, phù hợp với túi tiền của học sinh sinh viên."
-            android:textSize="16sp"
-            android:paddingHorizontal="10dp"
-            android:justificationMode="inter_word"
-            android:textColor="#393939"/>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Chính sách"
-            android:textSize="18sp"
-            android:paddingHorizontal="10dp"
-            android:layout_marginTop="10dp"
-            android:textColor="@color/black"
-            android:textStyle="bold"/>
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="#8F000000"/>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Chi phí vận chuyển đồng giá 30.000đ."
-            android:textSize="16sp"
-            android:paddingHorizontal="10dp"
-            android:textColor="#393939"/>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Với hóa đơn trên 150.000đ, đơn hàng sẽ được miễn phí vận chuyển.
-"
-            android:textSize="16sp"
-            android:paddingHorizontal="10dp"
-            android:textColor="#393939"/>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Liên hệ"
-            android:textSize="18sp"
-            android:paddingHorizontal="10dp"
-            android:layout_marginTop="10dp"
-            android:textColor="@color/black"
-            android:textStyle="bold"/>
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="#8F000000"/>
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="190dp"
+                android:src="@drawable/banner1"
+                />
             <TextView
-                android:layout_width="100dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Website:"
+                android:layout_marginTop="5dp"
+                android:paddingHorizontal="10dp"
+                android:text="Giới thiệu"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#8F000000"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Fuki là cửa hàng bán phụ kiện điện thoại, và các thiết bị điện tử khác. Đến với Fuki, bạn sẽ đứng trước vô vàn sự lựa chọn như ốp lưng, bảo vệ tai nghe, cáp sạc, kính cường lực....
+Fuki luôn mang đến những sản phẩm mới và hợp thời nhất. Bên cạnh đó, Fuki cam kết đi đầu trong chất lượng sản phẩm song song với ưu đãi giá cả vô cùng hợp lí, phù hợp với túi tiền của học sinh sinh viên."
+                android:textSize="16sp"
+                android:paddingHorizontal="10dp"
+                android:justificationMode="inter_word"
+                android:textColor="#393939"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Chính sách giao hàng"
+                android:textSize="18sp"
+                android:paddingHorizontal="10dp"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/black"
+                android:textStyle="bold"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#8F000000"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Chi phí vận chuyển đồng giá 30.000đ."
                 android:textSize="16sp"
                 android:paddingHorizontal="10dp"
                 android:textColor="#393939"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/linkWebsite"
-                android:textColor="#2A4AFA"
-                android:textSize="16sp"
-                android:paddingHorizontal="10dp" />
-        </LinearLayout>
-
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:paddingHorizontal="10dp"
-            android:text="Facebook:"
-            android:textColor="#393939"
-            android:textSize="16sp" />
-        <TextView
-            android:id="@+id/txtFacebook"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingHorizontal="10dp"
-            android:text="@string/linkFacebook"
-            android:textColor="#2A4AFA"
-            android:textSize="16sp" />
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <TextView
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"
-                android:paddingHorizontal="10dp"
-                android:text="Instagram:"
-                android:textColor="#393939"
-                android:textSize="16sp" />
-            <TextView
-                android:id="@+id/txtInstagram"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:text="Với hóa đơn trên 150.000đ, đơn hàng sẽ được miễn phí vận chuyển.
+"
                 android:textSize="16sp"
                 android:paddingHorizontal="10dp"
-                android:text="@string/linkInstagram"
-                android:textColor="#2A4AFA"/>
-        </LinearLayout>
+                android:textColor="#393939"/>
 
-    </LinearLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Chính sách quy đổi điểm"
+                android:textSize="18sp"
+                android:paddingHorizontal="10dp"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/black"
+                android:textStyle="bold"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#8F000000"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/Point"
+                android:textSize="16sp"
+                android:paddingHorizontal="10dp"
+                android:textColor="#393939"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/PointDoi"
+                android:textSize="16sp"
+                android:paddingHorizontal="10dp"
+                android:textColor="#393939"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Liên hệ"
+                android:textSize="18sp"
+                android:paddingHorizontal="10dp"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/black"
+                android:textStyle="bold"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#8F000000"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="10dp"
+                    android:text="Facebook:"
+                    android:textColor="#393939"
+                    android:textSize="16sp" />
+                <TextView
+                    android:id="@+id/txtFacebook"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="10dp"
+                    android:text="@string/linkFacebook"
+                    android:textColor="#2A4AFA"
+                    android:textSize="16sp" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="10dp"
+                    android:text="Instagram:"
+                    android:textColor="#393939"
+                    android:textSize="16sp" />
+                <TextView
+                    android:id="@+id/txtInstagram"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:paddingHorizontal="10dp"
+                    android:text="@string/linkInstagram"
+                    android:textColor="#2A4AFA"/>
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
 
 </LinearLayout>

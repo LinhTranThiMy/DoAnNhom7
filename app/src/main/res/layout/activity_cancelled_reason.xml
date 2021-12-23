@@ -12,7 +12,7 @@
         android:layout_height="?attr/actionBarSize"
         android:background="@drawable/grey_border_top">
         <ImageButton
-            android:id="@+id/btnMenu"
+            android:id="@+id/btnBackReason"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:background="@drawable/close"

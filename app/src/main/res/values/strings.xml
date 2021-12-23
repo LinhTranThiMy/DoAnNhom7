@@ -7,5 +7,8 @@
     <string name="linkInstagram"><u>www.instagram.com/fukiaccessories</u></string>
     <string name="linkWebsite"><u>www.fukiaccessories.com"</u></string>
 
+    <string name="Point">Khi quý khách mua sắm tích điểm: Tỷ lệ quy đổi điểm khi mua sắm: <b>100.000VNĐ = 1 điểm</b>.</string>
+    <string name="PointDoi">Khi quý khách muốn sử dụng điểm tích lũy: Tỷ lệ quy đổi điểm khi sử dụng: <b>1 điểm = 10.000VNĐ</b>."</string>
+
 
 </resources>
