@@ -2,7 +2,8 @@
 <LinearLayout  xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:layout_marginBottom="60dp">
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbarmain"
         android:layout_width="match_parent"
@@ -12,7 +13,7 @@
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="590dp">
+        android:layout_height="match_parent">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -156,6 +157,26 @@ Fuki luôn mang đến những sản phẩm mới và hợp thời nhất. Bên 
                     android:textSize="16sp"
                     android:paddingHorizontal="10dp"
                     android:text="@string/linkInstagram"
+                    android:textColor="#2A4AFA"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="10dp"
+                    android:text="Hotline: "
+                    android:textColor="#393939"
+                    android:textSize="16sp" />
+                <TextView
+                    android:id="@+id/txtHotline"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:paddingHorizontal="10dp"
+                    android:text="090 888 9999"
                     android:textColor="#2A4AFA"/>
             </LinearLayout>
         </LinearLayout>

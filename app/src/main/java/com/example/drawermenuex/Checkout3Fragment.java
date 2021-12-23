@@ -128,10 +128,10 @@ public class Checkout3Fragment extends Fragment implements ICartLoadListener {
             @Override
             public void onClick(View v) {
 //                replaceFragment(new CheckoutConfirmFragment());
-//                CheckoutConfirmFragment checkoutConfirmFragment=new CheckoutConfirmFragment();
-//                getFragmentManager().beginTransaction().replace(R.id.layout_Checkout,checkoutConfirmFragment).commit();
-                Intent intent=new Intent(getActivity(),ConfirmActivity.class);
-                startActivity(intent);
+                ConfirmationFragment confirmationFragment=new ConfirmationFragment();
+                getFragmentManager().beginTransaction().replace(R.id.layout_Checkout,confirmationFragment).commit();
+//                Intent intent=new Intent(getActivity(),ConfirmActivity.class);
+//                startActivity(intent);
             }
         });
         btnBackCheckOut3.setOnClickListener(new View.OnClickListener() {

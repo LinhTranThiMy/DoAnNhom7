@@ -147,7 +147,7 @@
                     android:layout_height="wrap_content"
                     android:gravity="end"
                     android:layout_weight="3"
-                    android:text="Subtotal amount"
+                    android:text=""
                     android:textSize="20sp" />
             </LinearLayout>
             <LinearLayout
@@ -174,7 +174,7 @@
                     android:layout_height="wrap_content"
                     android:gravity="end"
                     android:layout_weight="3"
-                    android:text="Shipping amount"
+                    android:text=""
                     android:textSize="20sp" />
             </LinearLayout>
             <LinearLayout
@@ -200,9 +200,10 @@
                     android:layout_height="wrap_content"
                     android:gravity="end"
                     android:layout_weight="3"
-                    android:text="Total amount"
+                    android:text=""
                     android:textSize="20sp"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold"
+                    android:textColor="@color/black"/>
             </LinearLayout>
 
 
