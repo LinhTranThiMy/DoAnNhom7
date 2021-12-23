@@ -40,7 +40,7 @@
                     android:layout_gravity="center"
                     android:text="ORDER DETAILS"
                     android:fontFamily="@font/abhaya_libre_bold"
-                    android:textSize="30sp"
+                    android:textSize="24sp"
                     android:textColor="@color/black"/>
             </androidx.appcompat.widget.Toolbar>
             <LinearLayout

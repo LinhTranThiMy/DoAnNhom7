@@ -1,5 +1,6 @@
 package com.example.drawermenuex;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -62,6 +63,7 @@ public class Delivered_MyOrders extends Fragment implements ItemClickListener {
 
     @Override
     public void onReOrderClick(MyOrder myOrder) {
-        //replace Fragment ReOrder
+        Intent intent = new Intent(getActivity(),CheckoutActivity.class);
+        startActivity(intent);
     }
 }
