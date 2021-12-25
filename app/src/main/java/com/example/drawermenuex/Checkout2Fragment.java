@@ -36,13 +36,21 @@ public class Checkout2Fragment extends Fragment {
         txtPhone=view.findViewById(R.id.txtPhone);
         txtDiaChi=view.findViewById(R.id.txtDiaChi);
 
+
+
         Bundle bundle=this.getArguments();
-        String fullnameCK2=bundle.getString("fullname");
-        txtName.setText(fullnameCK2);
-        String phoneCK2=bundle.getString("phone");
-        txtPhone.setText(phoneCK2);
-        String diachiCK2=bundle.getString("province")+bundle.getString("adDetail");
-        txtDiaChi.setText(diachiCK2);
+        if (bundle!=null) {
+           String fullnameCK2 = bundle.getString("fullname");
+            txtName.setText(fullnameCK2);
+        }
+        if (bundle!=null) {
+            String phoneCK2=bundle.getString("phone");
+            txtPhone.setText(phoneCK2);
+        }
+        if (bundle!=null) {
+            String diachiCK2=bundle.getString("province")+bundle.getString("adDetail");
+            txtDiaChi.setText(diachiCK2);
+        }
     }
 
     private void addEvent() {
@@ -71,6 +79,7 @@ public class Checkout2Fragment extends Fragment {
     private void replaceFragment(Fragment fragment) {
         FragmentTransaction fragmentTransaction= getParentFragmentManager().beginTransaction();
         fragmentTransaction.replace(R.id.frame_layout,fragment);
+        fragmentTransaction.addToBackStack(null);
         fragmentTransaction.commit();
     }
 }

@@ -13,10 +13,10 @@
                 android:title="Collection"/>
             <item
                 android:id="@+id/txtAccesories"
-                android:title="Accesories"/>
+                android:title="Accessories"/>
             <item
                 android:id="@+id/txtAboutus"
-                android:title="About us"/>
+                android:title="About us" />
 
     </group>
 

@@ -7,9 +7,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.text.method.HideReturnsTransformationMethod;
+import android.text.method.PasswordTransformationMethod;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 import com.example.util.Constant;
@@ -17,6 +21,7 @@ import com.example.util.Constant;
 public class LoginActivity extends AppCompatActivity {
     EditText edtUsername,edtPassword;
     Button btnLogin;
+    ImageView imvShowPass;
     TextView txtForgot,txtSignUp;
     private DBHelper DB;
     @Override
@@ -34,6 +39,22 @@ public class LoginActivity extends AppCompatActivity {
         txtForgot=findViewById(R.id.txtForgot);
         txtSignUp=findViewById(R.id.txtSignUp);
         DB= new DBHelper(this);
+        imvShowPass=findViewById(R.id.imvPasswordToggle);
+        imvShowPass.setImageResource(R.drawable.ic_hide_pass);
+        imvShowPass.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(edtPassword.getTransformationMethod().equals(HideReturnsTransformationMethod.getInstance())){
+                    //If password is visible then Hide it
+                    edtPassword.setTransformationMethod(PasswordTransformationMethod.getInstance());
+                    //Change icon
+                    imvShowPass.setImageResource(R.drawable.ic_hide_pass);
+                }else{
+                    edtPassword.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+                    imvShowPass.setImageResource(R.drawable.ic_show_pass);
+                }
+            }
+        });
     }
 
     private void addEvent() {
@@ -77,11 +98,8 @@ public class LoginActivity extends AppCompatActivity {
                 Toast.makeText(LoginActivity.this, "Sign in successful", Toast.LENGTH_SHORT).show();
                 Intent intent= new Intent(getApplicationContext(),MainActivity.class);
 
-                DB = new DBHelper(this);
+                intent.putExtra(USER, username);
 
-                Cursor getUser = DB.getUser(username);
-                String data = getUser.getString(1);
-                intent.putExtra(USER, data);
                 startActivity(intent);
             }else {
                 Toast.makeText(LoginActivity.this, "Invalid credential", Toast.LENGTH_SHORT).show();

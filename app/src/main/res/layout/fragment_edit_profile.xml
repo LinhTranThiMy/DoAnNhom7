@@ -7,6 +7,7 @@
     tools:context=".EditProfileFragment"
     android:orientation="vertical"
     android:padding="10dp">
+
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -14,107 +15,118 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginTop="40dp">
+            android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
             <ImageButton
                 android:id="@+id/btnBackMyAccount2"
-                android:layout_width="60dp"
+                android:layout_width="30dp"
                 android:layout_height="30dp"
-                android:src="@drawable/ic_baseline_keyboard_backspace_24"
-                android:background="@color/white" />
+                android:background="@color/white"
+                android:src="@drawable/ic_baseline_keyboard_backspace_24" />
+
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="300dp"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/abhaya_libre_bold"
                 android:text="My Account"
-                android:textSize="25sp"
+                android:gravity="center"
                 android:textColor="@color/black"
-                />
+                android:textSize="25sp" />
+        </LinearLayout>
+
             <androidx.cardview.widget.CardView
                 android:id="@+id/cv_logo"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:layout_centerHorizontal="true"
+                android:layout_gravity="center"
                 app:cardBackgroundColor="@color/white"
-                app:cardCornerRadius="75dp"
-                android:layout_gravity="center">
+                app:cardCornerRadius="75dp">
+
                 <ImageView
                     android:id="@+id/imvAvatar"
                     android:layout_width="200dp"
                     android:layout_height="250dp"
-                    android:src="@drawable/mylinh"
                     android:layout_gravity="center"
-                    android:layout_marginTop="10dp"/>
+                    android:layout_marginTop="10dp"
+                    android:src="@drawable/mylinh" />
             </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Username"
+                android:textColor="#7E7E7E"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txtUserName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Full name"
-                android:textSize="20sp"
                 android:textColor="#7E7E7E"
-                android:textStyle="bold"
-                />
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
             <EditText
                 android:id="@+id/edtFullName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Enter your name"
-                android:textSize="18sp"
                 android:textColor="@color/black"
-                />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Username"
-                android:textSize="20sp"
-                android:textColor="#7E7E7E"
-                android:textStyle="bold"
-                />
-            <EditText
-                android:id="@+id/edtUsername"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Enter your username"
-                android:textSize="18sp"
-                android:textColor="@color/black"
-                />
+                android:textSize="18sp" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Email"
-                android:textSize="20sp"
                 android:textColor="#7E7E7E"
-                android:textStyle="bold"
-                />
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
             <EditText
                 android:id="@+id/edtEmail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Enter your Email"
-                android:textSize="18sp"
                 android:textColor="@color/black"
-                />
+                android:textSize="18sp" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Date of birth"
-                android:textSize="20sp"
                 android:textColor="#7E7E7E"
-                android:textStyle="bold"
-                />
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
             <EditText
                 android:id="@+id/edtBirthDay"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Enter your Date of birth"
-                android:textSize="18sp"
                 android:textColor="@color/black"
-                />
+                android:textSize="18sp" />
+
             <Button
                 android:id="@+id/btnSaveProfile"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Save"
                 android:backgroundTint="#9D1B34"
+                android:text="Save"
                 android:textSize="20sp" />
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>

@@ -9,23 +9,32 @@
     android:layout_marginLeft="10dp"
     android:layout_marginRight="10dp">
 
-    <ImageButton
-        android:id="@+id/btnBackMyAccount1"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
-        android:background="@color/white"
-        android:src="@drawable/ic_baseline_keyboard_backspace_24" />
-
-    <TextView
-        android:layout_marginTop="20dp"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="My Account"
-        android:textSize="25sp"
-        android:textColor="@color/black"
-        />
+        android:orientation="horizontal">
+        <ImageButton
+            android:id="@+id/btnBackMyAccount1"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@color/white"
+            android:src="@drawable/ic_baseline_keyboard_backspace_24" />
+
+        <TextView
+            android:id="@+id/txtTitleAcc"
+            android:layout_marginTop="20dp"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:text="My Account"
+            android:gravity="center"
+            android:fontFamily="@font/abhaya_libre_bold"
+            android:textSize="25sp"
+            android:textColor="@color/black"
+            />
+    </LinearLayout>
+
     <androidx.cardview.widget.CardView
         android:id="@+id/cv_logo"
         android:layout_width="150dp"
@@ -50,33 +59,46 @@
         android:textSize="20sp"
         android:textColor="#7E7E7E"
         android:textStyle="bold"
+        android:paddingVertical="5dp"
         />
     <TextView
         android:id="@+id/txtFullName"
         android:layout_width="match_parent"
-        android:layout_height="30dp"
+        android:layout_height="wrap_content"
         android:text="Trần Thị Mỹ Linh"
         android:textSize="18sp"
         android:textColor="@color/black"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#C6C6C6"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Username"
         android:textSize="20sp"
+        android:paddingTop="10dp"
+        android:paddingBottom="5dp"
         android:textColor="#7E7E7E"
         android:textStyle="bold"
         />
     <TextView
         android:id="@+id/txtUserName"
         android:layout_width="match_parent"
-        android:layout_height="30dp"
+        android:layout_height="wrap_content"
         android:text="linh01"
         android:textSize="18sp"
         android:textColor="@color/black"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#C6C6C6"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Email"
+        android:paddingTop="10dp"
+        android:paddingBottom="5dp"
         android:textSize="20sp"
         android:textColor="#7E7E7E"
         android:textStyle="bold"
@@ -84,15 +106,21 @@
     <TextView
         android:id="@+id/txtEmail"
         android:layout_width="match_parent"
-        android:layout_height="30dp"
+        android:layout_height="wrap_content"
         android:text="linh01@gmail.com"
         android:textSize="18sp"
         android:textColor="@color/black"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#C6C6C6"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Date of birth"
         android:textSize="20sp"
+        android:paddingTop="10dp"
+        android:paddingBottom="5dp"
         android:textColor="#7E7E7E"
         android:textStyle="bold"
         />
@@ -103,6 +131,10 @@
         android:text="20/01/2001"
         android:textSize="18sp"
         android:textColor="@color/black"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#C6C6C6"/>
 
     <Button
         android:id="@+id/btnEditProfile"
@@ -111,6 +143,6 @@
         android:backgroundTint="#9D1B34"
         android:text="Edit profile"
         android:textSize="20sp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="30dp"
         />
 </LinearLayout>

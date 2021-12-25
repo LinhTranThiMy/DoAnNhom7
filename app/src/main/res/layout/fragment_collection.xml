@@ -18,21 +18,25 @@
         </androidx.appcompat.widget.Toolbar>
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingHorizontal="10dp"
+            android:weightSum="5">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:fontFamily="serif"
+                android:layout_weight="4.5"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/abhaya_libre_bold"
                 android:text="Collection"
                 android:textColor="@color/black"
-                android:textSize="25dp"
-                android:textStyle="bold" />
+                android:textSize="35sp"/>
             <Button
                 android:id="@+id/btnFilter"
                 android:layout_width="wrap_content"
                 android:layout_height="40dp"
-                android:layout_marginStart="140dp"
+                android:layout_weight="0.5"
+                android:layout_marginTop="10dp"
                 android:backgroundTint="@color/white"
                 android:drawableLeft="@drawable/ic_filter"
                 android:text="Filter"
@@ -48,7 +52,7 @@
             android:layout_height="wrap_content"
             android:text="NEW ARRIVALS"
             android:textColor="@color/black"
-            android:layout_marginLeft="20dp"
+            android:layout_marginLeft="10dp"
             android:textStyle="bold"
             android:textSize="22sp"
             android:layout_marginTop="10dp"/>
@@ -64,7 +68,7 @@
             android:layout_height="wrap_content"
             android:text="POPULAR"
             android:textColor="@color/black"
-            android:layout_marginLeft="20dp"
+            android:layout_marginLeft="10dp"
             android:textStyle="bold"
             android:textSize="22sp"
             android:layout_marginTop="10dp"/>
@@ -78,7 +82,7 @@
             android:layout_height="wrap_content"
             android:text="SALE OFF"
             android:textColor="@color/black"
-            android:layout_marginLeft="20dp"
+            android:layout_marginLeft="10dp"
             android:textStyle="bold"
             android:textSize="22sp"
             android:layout_marginTop="10dp"/>

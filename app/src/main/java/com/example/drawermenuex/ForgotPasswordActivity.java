@@ -7,10 +7,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 public class ForgotPasswordActivity extends AppCompatActivity {
     EditText edtEnterEmail;
+    ImageView imvBackForgot;
     Button btnSend;
     public static DBHelper DB;
     @Override
@@ -24,6 +26,7 @@ public class ForgotPasswordActivity extends AppCompatActivity {
     private void linkViews() {
         edtEnterEmail=findViewById(R.id.edtEnterEmail);
         btnSend=findViewById(R.id.btnSend);
+        imvBackForgot=findViewById(R.id.imvBackForgot);
         DB=new DBHelper(this);
     }
 
@@ -46,6 +49,14 @@ public class ForgotPasswordActivity extends AppCompatActivity {
                         Toast.makeText(ForgotPasswordActivity.this, "Email does not exists", Toast.LENGTH_SHORT).show();
                     }
                 }
+            }
+        });
+        imvBackForgot.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ForgotPasswordActivity.this,LoginActivity.class);
+                startActivity(intent);
+
             }
         });
     }

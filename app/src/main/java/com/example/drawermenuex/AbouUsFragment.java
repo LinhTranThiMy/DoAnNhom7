@@ -42,8 +42,6 @@ public class AbouUsFragment extends Fragment {
             }
         });
 
-
-
         return view;
     }
 }

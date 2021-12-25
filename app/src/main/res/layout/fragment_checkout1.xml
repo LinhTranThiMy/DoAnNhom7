@@ -17,7 +17,7 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_baseline_check_circle_outline_24"/>
+            android:src="@drawable/number1"/>
         <ImageView
             android:layout_width="120dp"
             android:layout_height="wrap_content"
@@ -26,7 +26,7 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_baseline_radio_button_unchecked_24"
+            android:src="@drawable/no2"
             />
         <ImageView
             android:layout_width="120dp"
@@ -36,52 +36,58 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_baseline_radio_button_unchecked_24"
+            android:src="@drawable/no3"
             />
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:weightSum="12">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Shipping info"
-            android:textSize="15sp"
-            android:textColor="#9D1B34"
-            android:layout_gravity="center"
-            android:layout_marginLeft="10dp"/>
+            android:textSize="18sp"
+            android:textColor="@color/textcolor"
+            android:fontFamily="@font/abhaya_libre_bold"
+            android:gravity="center"
+            android:layout_weight="4"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Payment"
-            android:textSize="15sp"
-            android:textColor="#9D1B34"
-            android:layout_gravity="center"
-            android:layout_marginLeft="70dp"/>
+            android:textSize="18sp"
+            android:textColor="@color/textcolor"
+            android:fontFamily="@font/abhaya_libre_bold"
+            android:gravity="center"
+            android:layout_weight="4"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Confirmation"
-            android:textSize="15sp"
-            android:textColor="#9D1B34"
-            android:layout_gravity="center"
-            android:layout_marginLeft="70dp"/>
-
+            android:textSize="18sp"
+            android:textColor="@color/textcolor"
+            android:fontFamily="@font/abhaya_libre_bold"
+            android:gravity="center"
+            android:layout_weight="4"
+            />
     </LinearLayout>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Contact information"
-        android:textSize="23sp"
+        android:textStyle="bold"
+        android:textSize="25sp"
+        android:paddingBottom="5dp"
         android:textColor="@color/black"
         android:layout_marginTop="10dp"
-        android:fontFamily="serif"/>
+        android:fontFamily="@font/abhaya_libre_bold"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Full name"
         android:textColor="@color/black"
-        android:textSize="20dp"
+        android:textSize="18dp"
         android:fontFamily="serif"/>
     <EditText
         android:id="@+id/edtFullNameCK"
@@ -95,7 +101,7 @@
         android:layout_height="wrap_content"
         android:text="Phone number"
         android:textColor="@color/black"
-        android:textSize="20dp"
+        android:textSize="18dp"
         android:fontFamily="serif"/>
     <EditText
         android:id="@+id/edtPhone"
@@ -108,10 +114,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Shipping Address"
-        android:textSize="20sp"
+        android:textStyle="bold"
+        android:paddingVertical="5dp"
+        android:textSize="25sp"
         android:textColor="@color/black"
         android:layout_marginTop="10dp"
-        android:fontFamily="serif"/>
+        android:fontFamily="@font/abhaya_libre_bold"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

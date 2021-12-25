@@ -33,12 +33,12 @@ public class MainActivity extends AppCompatActivity {
         linkViews();
         actionBar();
 
+        String user = getIntent().getStringExtra(USER);
 
         bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                switch (item.getItemId())
-                {
+                switch (item.getItemId()) {
                     case R.id.home:
                         replaceFragment(new HomeFragment());
                         bottomNavigationView.getMenu().findItem(R.id.home).setChecked(true);
@@ -61,17 +61,21 @@ public class MainActivity extends AppCompatActivity {
                         }
                         break;
                     case R.id.account:
-                        String data = getIntent().getStringExtra(USER);
+                        String key = getIntent().getStringExtra(USER);
                         Bundle bundle = new Bundle();
-                        bundle.putString(USER, data);
-                        AccountFragment fragInfo = new AccountFragment();
-                        fragInfo.setArguments(bundle);
-                        replaceFragment(new AccountFragment(data));
+                        bundle.putSerializable(USER, key);
+                        AppCompatActivity activity = (AppCompatActivity) MainActivity.this;
+                        AccountFragment fragment = new AccountFragment();
+                        activity.getSupportFragmentManager().beginTransaction().replace(R.id.frame_layout, fragment).addToBackStack(null).commit();
+                        bundle.putSerializable(USER, key);
+                        fragment.setArguments(bundle);
+
                         bottomNavigationView.getMenu().findItem(R.id.account).setChecked(true);
                         int size2 = navigationbarmain.getMenu().size();
                         for (int i = 0; i < size2; i++) {
                             navigationbarmain.getMenu().getItem(i).setChecked(false);
                         }
+
                         break;
 
                 }
@@ -81,29 +85,24 @@ public class MainActivity extends AppCompatActivity {
         navigationbarmain.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                int id =item.getItemId();
-                if(id==R.id.txtHome)
-                {
+                int id = item.getItemId();
+                if (id == R.id.txtHome) {
                     replaceFragment(new HomeFragment());
                     bottomNavigationView.getMenu().findItem(R.id.home).setChecked(true);
 
-                } else if(id==R.id.txtCases)
-                {
+                } else if (id == R.id.txtCases) {
                     replaceFragment(new CasesFragment());
                     bottomNavigationView.getMenu().findItem(R.id.menu_none).setChecked(true);
-                } else if(id==R.id.txtCollection)
-                {
+                } else if (id == R.id.txtCollection) {
                     replaceFragment(new CollectionFragment());
                     bottomNavigationView.getMenu().findItem(R.id.menu_none).setChecked(true);
-                } else if(id==R.id.txtAccesories)
-                {
+                } else if (id == R.id.txtAccesories) {
                     replaceFragment(new AccessoriesFragment());
                     bottomNavigationView.getMenu().findItem(R.id.menu_none).setChecked(true);
 
-                }else if(id==R.id.txtAboutus)
-                {
-                        replaceFragment(new AbouUsFragment());
-                        bottomNavigationView.getMenu().findItem(R.id.menu_none).setChecked(true);
+                } else if (id == R.id.txtAboutus) {
+                    replaceFragment(new AbouUsFragment());
+                    bottomNavigationView.getMenu().findItem(R.id.menu_none).setChecked(true);
 
                 }
                 drawerLayoutmain.closeDrawer(GravityCompat.START);
@@ -116,10 +115,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void linkViews() {
-        toolbarmain=findViewById(R.id.toolbar);
-        drawerLayoutmain=findViewById(R.id.drawerlayoutmain);
-        navigationbarmain=findViewById(R.id.navigationbarmain);
-        bottomNavigationView=findViewById(R.id.bottom_navigation_bar);
+        toolbarmain = findViewById(R.id.toolbar);
+        drawerLayoutmain = findViewById(R.id.drawerlayoutmain);
+        navigationbarmain = findViewById(R.id.navigationbarmain);
+        bottomNavigationView = findViewById(R.id.bottom_navigation_bar);
 
     }
 
@@ -136,9 +135,10 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-    private void replaceFragment(Fragment fragment){
+
+    private void replaceFragment(Fragment fragment) {
         FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-        fragmentTransaction.replace(R.id.frame_layout,fragment);
+        fragmentTransaction.replace(R.id.frame_layout, fragment);
         fragmentTransaction.commit();
 
     }

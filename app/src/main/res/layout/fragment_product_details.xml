@@ -6,7 +6,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ProductDetailsFragment"
     android:layout_marginBottom="50dp">
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -254,6 +253,4 @@
                 android:drawableStart="@drawable/ic_baseline_add_shopping_cart_24"/>
         </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-
 </ScrollView>

@@ -3,6 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.drawermenuex">
 
+    <uses-permission android:name="android.permission.CAMERA" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -11,13 +13,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DrawerMenuEx">
         <activity
+            android:name=".ConfirmActivity"
+            android:exported="true" />
+        <activity
             android:name=".CheckoutActivity"
-            android:exported="true" />
-        <activity
-            android:name=".ProfileMyAccount2"
-            android:exported="true" />
-        <activity
-            android:name=".ProfileMyAccount1"
             android:exported="true" />
         <activity
             android:name=".SplashScreen"
@@ -33,16 +32,19 @@
             android:exported="true" />
         <activity
             android:name=".ForgotPasswordActivity"
-            android:exported="true" />
+            android:exported="true" >
+        </activity>
         <activity
             android:name=".SignUpActivity"
             android:exported="true" />
         <activity
             android:name=".LoginActivity"
-            android:exported="true" />
+            android:exported="true" >
+        </activity>
         <activity
             android:name=".MainActivity"
             android:exported="true">
+
         </activity>
     </application>
 

@@ -4,9 +4,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.method.HideReturnsTransformationMethod;
+import android.text.method.PasswordTransformationMethod;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -14,6 +17,7 @@ public class SignUpActivity extends AppCompatActivity {
     private EditText edtFullname, edtUsername,edtEmail,edtPassword,edtConfirmPassword,edtBirthday;
     private Button btnSignUp;
     TextView txtLogin;
+    ImageView imvSigupConfirmPasswordToggle, imvSigupPasswordToggle;
     public static DBHelper DB;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +36,10 @@ public class SignUpActivity extends AppCompatActivity {
         edtConfirmPassword=findViewById(R.id.edtConfirmPassword);
         btnSignUp=findViewById(R.id.btnSignUp);
         txtLogin=findViewById(R.id.txtLogin);
+        imvSigupConfirmPasswordToggle=findViewById(R.id.imvSigupConfirmPasswordToggle);
+        imvSigupPasswordToggle=findViewById(R.id.imvSigupPasswordToggle);
+        imvSigupPasswordToggle.setImageResource(R.drawable.ic_hide_pass);
+        imvSigupConfirmPasswordToggle.setImageResource(R.drawable.ic_hide_pass);
         DB= new DBHelper(this);
     }
 
@@ -46,6 +54,34 @@ public class SignUpActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 signup();
+            }
+        });
+        imvSigupPasswordToggle.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(edtPassword.getTransformationMethod().equals(HideReturnsTransformationMethod.getInstance())){
+                    //If password is visible then Hide it
+                    edtPassword.setTransformationMethod(PasswordTransformationMethod.getInstance());
+                    //Change icon
+                    imvSigupPasswordToggle.setImageResource(R.drawable.ic_hide_pass);
+                }else{
+                    edtPassword.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+                    imvSigupPasswordToggle.setImageResource(R.drawable.ic_show_pass);
+                }
+            }
+        });
+        imvSigupConfirmPasswordToggle.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(edtConfirmPassword.getTransformationMethod().equals(HideReturnsTransformationMethod.getInstance())){
+                    //If password is visible then Hide it
+                    edtConfirmPassword.setTransformationMethod(PasswordTransformationMethod.getInstance());
+                    //Change icon
+                    imvSigupPasswordToggle.setImageResource(R.drawable.ic_hide_pass);
+                }else{
+                    edtConfirmPassword.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+                    imvSigupPasswordToggle.setImageResource(R.drawable.ic_show_pass);
+                }
             }
         });
     }

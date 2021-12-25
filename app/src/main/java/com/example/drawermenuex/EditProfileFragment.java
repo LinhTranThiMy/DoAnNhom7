@@ -1,9 +1,12 @@
 package com.example.drawermenuex;
 
+import static com.example.util.Constant.USER;
+
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
@@ -13,12 +16,14 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class EditProfileFragment extends Fragment {
     Button btnSaveProfile;
     ImageButton btnBackMyAccount2;
-    EditText edtFullName,edtUserName,edtEmail,edtBirthDay;
+    EditText edtFullName,edtEmail,edtBirthDay;
+    TextView txtUserName;
     public static DBHelper DB;
     String mPassUser;
     View mView;
@@ -50,7 +55,7 @@ public class EditProfileFragment extends Fragment {
         btnSaveProfile=mView.findViewById(R.id.btnSaveProfile);
         btnBackMyAccount2=mView.findViewById(R.id.btnBackMyAccount2);
         edtFullName=mView.findViewById(R.id.edtFullName);
-        edtUserName=mView.findViewById(R.id.edtUsername);
+        txtUserName=mView.findViewById(R.id.txtUserName);
         edtEmail=mView.findViewById(R.id.edtEmail);
         edtBirthDay=mView.findViewById(R.id.edtBirthDay);
     }
@@ -59,7 +64,16 @@ public class EditProfileFragment extends Fragment {
         btnBackMyAccount2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                replaceFragment(new DetailAccountFragment(mPassUser));
+                Bundle bundle = getArguments();
+                if(bundle != null) {
+                    String key = bundle.getString(USER);
+                    bundle.putSerializable(USER, key);
+                    AppCompatActivity activity = (AppCompatActivity) v.getContext();
+                    DetailAccountFragment fragment = new DetailAccountFragment();
+                    activity.getSupportFragmentManager().beginTransaction().replace(R.id.frame_layout, fragment).addToBackStack(null).commit();
+                    bundle.putSerializable(USER, key);
+                    fragment.setArguments(bundle);
+                }
             }
         });
         btnSaveProfile.setOnClickListener(new View.OnClickListener() {
@@ -67,16 +81,23 @@ public class EditProfileFragment extends Fragment {
             public void onClick(View v) {
 
                 String fullName = edtFullName.getText().toString();
-                String username = edtUserName.getText().toString();
+                String username = txtUserName.getText().toString();
                 String email = edtEmail.getText().toString();
                 String dob = edtBirthDay.getText().toString();
 
-                Boolean checkupdatedata = DB.updateuserdata(mPassUser, fullName, username, email, dob);
+                Boolean checkupdatedata = DB.updateuserdata(fullName, username, email, dob);
                 if(checkupdatedata==true){
-                    Toast.makeText(getContext(), "Entry Updated, Please Login again", Toast.LENGTH_SHORT).show();
-
-                    Intent intent= new Intent(getContext(),LoginActivity.class);
-                    startActivity(intent);
+                    Toast.makeText(getContext(), "Entry Updated", Toast.LENGTH_SHORT).show();
+                    Bundle bundle = getArguments();
+                    if(bundle != null) {
+                        String key = bundle.getString(USER);
+                        bundle.putSerializable(USER, key);
+                        AppCompatActivity activity = (AppCompatActivity) v.getContext();
+                        DetailAccountFragment fragment = new DetailAccountFragment();
+                        activity.getSupportFragmentManager().beginTransaction().replace(R.id.frame_layout, fragment).addToBackStack(null).commit();
+                        bundle.putSerializable(USER, key);
+                        fragment.setArguments(bundle);
+                    }
                 }
                 else
                     Toast.makeText(getContext(), "New Entry Not Updated", Toast.LENGTH_SHORT).show();
@@ -87,9 +108,12 @@ public class EditProfileFragment extends Fragment {
 
     public void setData(){
 
+        Bundle bundle = getArguments();
+        String key = bundle.getString(USER);
+
         DB = new DBHelper(getContext());
 
-        Cursor res = DB.getdata(mPassUser);
+        Cursor res = DB.getdata(key);
         if(res.getCount()==0){
             Toast.makeText(getContext(), "No Entry Exists", Toast.LENGTH_SHORT).show();
         }
@@ -100,15 +124,10 @@ public class EditProfileFragment extends Fragment {
             String pfDob = res.getString(5);
 
             edtFullName.setText(pfFullName);
-            edtUserName.setText(pfUsername);
+            txtUserName.setText(pfUsername);
             edtEmail.setText(pfEmail);
             edtBirthDay.setText(pfDob);
 
         }
-    }
-    private void replaceFragment(Fragment fragment) {
-        FragmentTransaction fragmentTransaction= getParentFragmentManager().beginTransaction();
-        fragmentTransaction.replace(R.id.frame_layout,fragment);
-        fragmentTransaction.commit();
     }
 }

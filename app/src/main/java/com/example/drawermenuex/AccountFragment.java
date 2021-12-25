@@ -36,29 +36,28 @@ public class AccountFragment extends Fragment {
         ((AppCompatActivity) getActivity()).getSupportActionBar().show();
 
         btnProfile=view.findViewById(R.id.btnProfile);
-//        Bundle bundle = getArguments();
-//        if (bundle != null) {
-//            String data = getArguments().getString(USER);
-//            btnProfile.setText(data);
-//        }
-//        else btnProfile.setText("error");
-
-        btnProfile.setText(mPassUser);
-
         btnPoints=view.findViewById(R.id.btnPoints);
         btnMyOrder=view.findViewById(R.id.btnMyOrder);
         btnLogOut=view.findViewById(R.id.btnLogOut);
         btnProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String data = getArguments().getString(USER);
-                AppCompatActivity activity = (AppCompatActivity) v.getContext();
-                ProfileFragment fragment = new ProfileFragment();
-                activity.getSupportFragmentManager().beginTransaction().replace(R.id.frame_layout,fragment).addToBackStack(null).commit();;
-                Bundle bundle = new Bundle();
-                bundle.putSerializable(USER,data);
-                fragment.setArguments(bundle);
-
+                Bundle bundle = getArguments();
+                if(bundle != null) {
+                    String key = bundle.getString(USER);
+                    bundle.putSerializable(USER, key);
+                    AppCompatActivity activity = (AppCompatActivity) v.getContext();
+                    ProfileFragment fragment = new ProfileFragment();
+                    activity.getSupportFragmentManager().beginTransaction().replace(R.id.frame_layout, fragment).addToBackStack(null).commit();
+                    bundle.putSerializable(USER, key);
+                    fragment.setArguments(bundle);
+                }
+//                AppCompatActivity activity = (AppCompatActivity) v.getContext();
+//                ProfileFragment fragment = new ProfileFragment();
+//                activity.getSupportFragmentManager().beginTransaction().replace(R.id.frame_layout,fragment).addToBackStack(null).commit();;
+//                Bundle bundle = new Bundle();
+//                bundle.putSerializable(USER, mPassUser);
+//                fragment.setArguments(bundle);
 //                replaceFragment( new ProfileFragment(mPassUser));
             }
         });
@@ -66,8 +65,6 @@ public class AccountFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 ConfirmDangXuat();
-
-
             }
         });
         btnPoints.setOnClickListener(new View.OnClickListener() {
@@ -79,7 +76,7 @@ public class AccountFragment extends Fragment {
         btnMyOrder.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                replaceFragment(new MyOrderFragment());
+               replaceFragment(new MyOrderFragment());
             }
         });
         return view;

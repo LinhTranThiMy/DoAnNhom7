@@ -17,7 +17,7 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_baseline_check_circle_outline_24"/>
+            android:src="@drawable/check"/>
         <ImageView
             android:layout_width="120dp"
             android:layout_height="wrap_content"
@@ -26,7 +26,7 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_baseline_check_circle_outline_24"
+            android:src="@drawable/number2"
             />
         <ImageView
             android:layout_width="120dp"
@@ -36,37 +36,41 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_baseline_radio_button_unchecked_24"
+            android:src="@drawable/no3"
             />
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:weightSum="12">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Shipping info"
-            android:textSize="15sp"
-            android:textColor="#9D1B34"
-            android:layout_gravity="center"
-            android:layout_marginLeft="10dp"/>
+            android:textSize="18sp"
+            android:textColor="@color/textcolor"
+            android:fontFamily="@font/abhaya_libre_bold"
+            android:gravity="center"
+            android:layout_weight="4"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Payment"
-            android:textSize="15sp"
-            android:textColor="#9D1B34"
-            android:layout_gravity="center"
-            android:layout_marginLeft="70dp"/>
+            android:textSize="18sp"
+            android:textColor="@color/textcolor"
+            android:fontFamily="@font/abhaya_libre_bold"
+            android:gravity="center"
+            android:layout_weight="4"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Confirmation"
-            android:textSize="15sp"
-            android:textColor="#9D1B34"
-            android:layout_gravity="center"
-            android:layout_marginLeft="70dp"/>
-
+            android:textSize="18sp"
+            android:textColor="@color/textcolor"
+            android:fontFamily="@font/abhaya_libre_bold"
+            android:gravity="center"
+            android:layout_weight="4"
+            />
     </LinearLayout>
     <LinearLayout
         android:orientation="vertical"
@@ -76,44 +80,46 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Shipping information"
-            android:textSize="23sp"
+            android:textSize="25sp"
             android:textColor="@color/black"
-            android:layout_marginTop="10dp"/>
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/abhaya_libre_bold"/>
         <TextView
             android:id="@+id/txtName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text=""
-            android:textColor="#959292"
-            android:textSize="13dp"/>
+            android:textColor="@color/black"
+            android:textSize="18sp"/>
         <TextView
             android:id="@+id/txtPhone"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text=""
-            android:textColor="#959292"
-            android:textSize="13dp"/>
+            android:textColor="@color/black"
+            android:textSize="18sp"/>
         <TextView
             android:id="@+id/txtDiaChi"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text=""
-            android:textColor="#959292"
-            android:textSize="13dp"/>
+            android:textColor="@color/black"
+            android:textSize="18sp"/>
     </LinearLayout>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Select Payment Method"
-        android:textSize="23sp"
+        android:textSize="25sp"
         android:textColor="@color/black"
+        android:fontFamily="@font/abhaya_libre_bold"
         android:layout_marginTop="10dp"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Choose the payment method that suitable for you"
         android:textColor="#959292"
-        android:textSize="15dp"/>
+        android:textSize="15sp"/>
 
     <Button
         android:id="@+id/btnPaymentMethod"
@@ -157,7 +163,6 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-
 
     </RelativeLayout>
 </LinearLayout>

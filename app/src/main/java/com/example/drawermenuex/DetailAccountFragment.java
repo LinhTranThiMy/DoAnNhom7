@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
@@ -61,22 +62,25 @@ public class DetailAccountFragment extends Fragment {
 
     private void setData(){
         DB = new DBHelper(getContext());
+        Bundle bundle = getArguments();
+        if(bundle != null) {
+            String data = bundle.getString(USER);
+            Cursor res = DB.getdata(data);
+            if (res.getCount() == 0) {
+                Toast.makeText(getContext(), "No Entry Exists", Toast.LENGTH_SHORT).show();
+            }
+            while (res.moveToNext()) {
+                String pfUsername = res.getString(1);
+                String pfFullName = res.getString(0);
+                String pfEmail = res.getString(2);
+                String pfDob = res.getString(5);
 
-        Cursor res = DB.getdata(mPassUser);
-        if(res.getCount()==0){
-            Toast.makeText(getContext(), "No Entry Exists", Toast.LENGTH_SHORT).show();
-        }
-        while(res.moveToNext()){
-            String pfUsername = res.getString(1);
-            String pfFullName = res.getString(0);
-            String pfEmail = res.getString(2);
-            String pfDob = res.getString(5);
+                txtUserName.setText(pfUsername);
+                txtFullName.setText(pfFullName);
+                txtEmail.setText(pfEmail);
+                txtBirthDay.setText(pfDob);
 
-            txtUserName.setText(pfUsername);
-            txtFullName.setText(pfFullName);
-            txtEmail.setText(pfEmail);
-            txtBirthDay.setText(pfDob);
-
+            }
         }
     }
 
@@ -84,20 +88,34 @@ public class DetailAccountFragment extends Fragment {
         btnEditProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                replaceFragment(new EditProfileFragment(mPassUser));
+                Bundle bundle = getArguments();
+                if(bundle != null) {
+                    String key = bundle.getString(USER);
+                    bundle.putSerializable(USER, key);
+                    AppCompatActivity activity = (AppCompatActivity) v.getContext();
+                    EditProfileFragment fragment = new EditProfileFragment();
+                    activity.getSupportFragmentManager().beginTransaction().replace(R.id.frame_layout, fragment).addToBackStack(null).commit();
+                    bundle.putSerializable(USER, key);
+                    fragment.setArguments(bundle);
+                }
             }
         });
         btnBackMyAccount1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                replaceFragment(new ProfileFragment(mPassUser));
+                Bundle bundle = getArguments();
+                if(bundle != null) {
+                    String key = bundle.getString(USER);
+                    bundle.putSerializable(USER, key);
+                    AppCompatActivity activity = (AppCompatActivity) v.getContext();
+                    ProfileFragment fragment = new ProfileFragment();
+                    activity.getSupportFragmentManager().beginTransaction().replace(R.id.frame_layout, fragment).addToBackStack(null).commit();
+                    bundle.putSerializable(USER, key);
+                    fragment.setArguments(bundle);
+                }
             }
         });
     }
 
-    private void replaceFragment(Fragment fragment) {
-        FragmentTransaction fragmentTransaction= getParentFragmentManager().beginTransaction();
-        fragmentTransaction.replace(R.id.frame_layout,fragment);
-        fragmentTransaction.commit();
-    }
+
 }

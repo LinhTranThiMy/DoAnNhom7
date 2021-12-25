@@ -15,23 +15,26 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingHorizontal="15dp"
-        >
+        android:orientation="horizontal"
+        android:paddingHorizontal="10dp"
+        android:weightSum="7">
     <TextView
         android:id="@+id/txtCase"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="serif"
+        android:layout_weight="6.5"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/abhaya_libre_bold"
         android:text="Cases"
         android:textColor="@color/black"
-        android:textSize="25dp"
-        android:textStyle="bold" />
+        android:textSize="30sp" />
 
         <Button
             android:id="@+id/btnFilter"
             android:layout_width="wrap_content"
             android:layout_height="40dp"
-            android:layout_marginStart="200dp"
+            android:layout_weight="0.5"
+            android:layout_marginTop="10dp"
             android:backgroundTint="@color/white"
             android:drawableLeft="@drawable/ic_filter"
             android:text="Filter"

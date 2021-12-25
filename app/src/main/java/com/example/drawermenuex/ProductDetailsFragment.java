@@ -17,20 +17,33 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager2.widget.ViewPager2;
 
 import com.bumptech.glide.Glide;
 import com.example.adapter.ProductDetailsAdapter;
+import com.example.interfaces.ICartLoadListener;
+import com.example.model.CartModel;
 import com.example.model.Product;
 import com.example.model.ProductDetailsBanner;
 import com.example.util.Constant;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.tabs.TabLayout;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 
 public class ProductDetailsFragment extends Fragment {
@@ -51,6 +64,9 @@ public class ProductDetailsFragment extends Fragment {
     ImageView imvBuyNow, imvAddToCart;
     TextView txtNameBuyNow, txtPriceBuyNow, txtQuantityBuyNow, txtNameAddToCart, txtPriceAddToCart, txtQuantityAddToCart;
     ImageButton btnMinusBuyNow, btnAddBuyNow, btnMinusAddToCart, btnAddAddToCart ;
+
+    ICartLoadListener cartLoadListener;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -74,7 +90,7 @@ public class ProductDetailsFragment extends Fragment {
         Bundle bundle = getArguments();
         if(bundle != null)
         {
-            p= (Product) bundle.get(Constant.SELECTED_ITEM);
+            p = (Product) bundle.get(Constant.SELECTED_ITEM);
             txtNameProductDetails.setText(p.getProductName());
             txtPriceProductDetails.setText(String.valueOf(p.getProductPrice()));
             txtRatingProductDetails.setText(p.getProductRatingNumber());
@@ -104,117 +120,99 @@ public class ProductDetailsFragment extends Fragment {
         btnBuyNowPD.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Dialog dialog = new Dialog(getContext());
-                dialog.setContentView(R.layout.fragment_buy_now);
-                dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.WRAP_CONTENT);
-                dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.WHITE));
-                dialog.getWindow().setGravity(Gravity.BOTTOM);
-                //LinkViews
-                imvBuyNow=dialog.findViewById(R.id.imvBuyNow);
-                txtNameBuyNow=dialog.findViewById(R.id.txtNameBuyNow);
-                txtPriceBuyNow=dialog.findViewById(R.id.txtPriceBuyNow);
-                spSelectDeviceBN=dialog.findViewById(R.id.spSelectDeviceBN);
-                btnAddBuyNow=dialog.findViewById(R.id.btnAddBuyNow);
-                btnMinusBuyNow=dialog.findViewById(R.id.btnMinusBuyNow);
-                txtQuantityBuyNow=dialog.findViewById(R.id.txtQuantityBuyNow);
-                //addEvents
-                btnAddBuyNow.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        int quantity=Integer.parseInt(txtQuantityBuyNow.getText().toString());
-                        if(quantity < 10)
-                        {
-                            quantity+=1;
-                            txtQuantityBuyNow.setText(Integer.toString(quantity));
-                        }else{
-                            Toast.makeText(getContext(), "Vượt quá số lượng đặt hàng cho phép", Toast.LENGTH_SHORT).show();
-                        }
-                    }
-                });
-                btnMinusBuyNow.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        int quantity=Integer.parseInt(txtQuantityBuyNow.getText().toString());
-                        if(quantity > 1)
-                        {
-                            quantity-=1;
-                            txtQuantityBuyNow.setText(Integer.toString(quantity));
-                        }
-                    }
-                });
-                //loadData
-//                imvBuyNow.setImageResource(p.getProductThumb());
-                Glide.with(getContext()).load(p.getProductThumb()).into(imvBuyNow);
-                txtNameBuyNow.setText(p.getProductName());
-                txtPriceBuyNow.setText(String.valueOf(p.getProductPrice()));
-                selectDeviceBN= new ArrayList<String>();
-                selectDeviceBN.add("Select one");
-                selectDeviceBN.add("Iphone 13");
-                selectDeviceBN.add("Iphone 11");
-                selectDeviceBN.add("Iphone X");
-                selectDeviceBN.add("Iphone 7");
-                adapterSelectDeviceBN= new ArrayAdapter<String>(getContext(), android.R.layout.simple_spinner_item,selectDeviceBN);
-                spSelectDeviceBN.setAdapter(adapterSelectDeviceBN);
-                dialog.show();
+                addToCart();
+                replaceFragment( new CartFragment());
             }
         });
         btnAddtoCartPD.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Dialog dialog = new Dialog(getContext());
-                dialog.setContentView(R.layout.fragment_addtocart);
-                dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.WRAP_CONTENT);
-                dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.WHITE));
-                dialog.getWindow().setGravity(Gravity.BOTTOM);
-                //LinkViews
-                imvAddToCart=dialog.findViewById(R.id.imvAddToCart);
-                txtNameAddToCart=dialog.findViewById(R.id.txtNameAddToCart);
-                txtPriceAddToCart=dialog.findViewById(R.id.txtPriceAddToCart);
-                spSelectDeviceATC=dialog.findViewById(R.id.spSelectDeviceATC);
-                btnAddAddToCart=dialog.findViewById(R.id.btnAddAddToCart);
-                btnMinusAddToCart=dialog.findViewById(R.id.btnMinusAddToCart);
-                txtQuantityAddToCart=dialog.findViewById(R.id.txtQuantityAddToCart);
-                //addEvents
-                btnAddAddToCart.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        int quantity=Integer.parseInt(txtQuantityAddToCart.getText().toString());
-                        if(quantity < 10)
-                        {
-                            quantity+=1;
-                            txtQuantityAddToCart.setText(Integer.toString(quantity));
-                        }else{
-                            Toast.makeText(getContext(), "Vượt quá số lượng đặt hàng cho phép", Toast.LENGTH_SHORT).show();
-                        }
-                    }
-                });
-                btnMinusAddToCart.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        int quantity=Integer.parseInt(txtQuantityAddToCart.getText().toString());
-                        if(quantity > 1)
-                        {
-                            quantity-=1;
-                            txtQuantityAddToCart.setText(Integer.toString(quantity));
-                        }
-                    }
-                });
-                //loadData
-//                imvAddToCart.setImageResource(p.getProductThumb());
-                Glide.with(getContext()).load(p.getProductThumb()).into(imvAddToCart);
-                txtNameAddToCart.setText(p.getProductName());
-                txtPriceAddToCart.setText(String.valueOf(p.getProductPrice()));
-                selectDeviceATC= new ArrayList<String>();
-                selectDeviceATC.add("Select one");
-                selectDeviceATC.add("Iphone 13");
-                selectDeviceATC.add("Iphone 11");
-                selectDeviceATC.add("Iphone X");
-                selectDeviceATC.add("Iphone 7");
-                adapterSelectDeviceATC= new ArrayAdapter<String>(getContext(), android.R.layout.simple_spinner_item,selectDeviceATC);
-                spSelectDeviceATC.setAdapter(adapterSelectDeviceATC);
-                dialog.show();
+                addToCart();
+                //Show Toast
             }
         });
+
+    }
+    private void replaceFragment(Fragment fragment) {
+        FragmentTransaction fragmentTransaction= getParentFragmentManager().beginTransaction();
+        fragmentTransaction.replace(R.id.frame_layout,fragment);
+        fragmentTransaction.commit();
+    }
+
+    private void addToCart() {
+        DatabaseReference userCart = FirebaseDatabase
+                .getInstance()
+                .getReference("Cart")
+                .child("UNIQUE_USER_ID"); //In other project, you'll add user id here
+
+        userCart.child("NUMBER")
+                .addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                        if (snapshot.exists()) //If user already have item in cart
+                        {
+                            //Just update quantity and totalPrice
+                            CartModel cartModel = snapshot.getValue(CartModel.class);
+                            cartModel.setQuantity(cartModel.getQuantity() + 1);
+                            Map<String, Object> updateData = new HashMap<>();
+                            updateData.put("quantity", cartModel.getQuantity() + 1);
+                            updateData.put("totalPrice", cartModel.getQuantity() * Double.parseDouble(cartModel.getPrice()));
+
+                            userCart.child("NUMBER")
+                                    .updateChildren(updateData)
+                                    .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                        @Override
+                                        public void onSuccess(Void unused) {
+                                            Toast.makeText(getContext(), "Success", Toast.LENGTH_SHORT).show();
+                                        }
+                                    })
+                                    .addOnFailureListener(new OnFailureListener() {
+                                        @Override
+                                        public void onFailure(@NonNull Exception e) {
+                                            cartLoadListener.onCartLoadFailed(e.getMessage());
+                                        }
+                                    });
+
+                        } else //If item not have in cart, add new
+                        {
+                            CartModel cartModel = new CartModel();
+                            cartModel.setName(p.getProductName());
+                            cartModel.setImage(p.getProductThumb());
+                            cartModel.setKey(p.getKey());
+                            cartModel.setPrice(String.valueOf(p.getProductPrice()));
+                            cartModel.setQuantity(1);
+                            cartModel.setTotalPrice((p.getProductPrice()));
+
+                            userCart.child(p.getProductId())
+                                    .setValue(cartModel).addOnSuccessListener(new OnSuccessListener<Void>() {
+                                @Override
+                                public void onSuccess(Void unused) {
+                                    Toast.makeText(getContext(), "Success", Toast.LENGTH_SHORT).show();
+                                }
+                            })
+                                    .addOnFailureListener(new OnFailureListener() {
+                                @Override
+                                public void onFailure(@NonNull Exception e) {
+                                    Toast.makeText(getContext(), "Fail", Toast.LENGTH_SHORT).show();
+                                }
+                            });
+//                                    .addOnSuccessListener(aVoid -> {
+//                                        cartLoadListener.onCartLoadFailed("Add To Cart Success!");
+//                                    })
+//
+                            //7:11 - Part 2
+//                                    .addOnFailureListener(e -> cartLoadListener.onCartLoadFailed(e.getMessage()));
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                        cartLoadListener.onCartLoadFailed(error.getMessage());
+
+                    }
+                });
     }
 
 
