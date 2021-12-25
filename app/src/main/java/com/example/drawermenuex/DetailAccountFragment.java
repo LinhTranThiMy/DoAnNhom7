@@ -26,11 +26,7 @@ public class DetailAccountFragment extends Fragment {
     DBHelper DB;
     View mView;
 
-    String mPassUser;
 
-    public DetailAccountFragment(String passUser) {
-        this.mPassUser = passUser;
-    }
 
     public DetailAccountFragment() {
     }
@@ -91,7 +87,6 @@ public class DetailAccountFragment extends Fragment {
                 Bundle bundle = getArguments();
                 if(bundle != null) {
                     String key = bundle.getString(USER);
-                    bundle.putSerializable(USER, key);
                     AppCompatActivity activity = (AppCompatActivity) v.getContext();
                     EditProfileFragment fragment = new EditProfileFragment();
                     activity.getSupportFragmentManager().beginTransaction().replace(R.id.frame_layout, fragment).addToBackStack(null).commit();
@@ -106,7 +101,6 @@ public class DetailAccountFragment extends Fragment {
                 Bundle bundle = getArguments();
                 if(bundle != null) {
                     String key = bundle.getString(USER);
-                    bundle.putSerializable(USER, key);
                     AppCompatActivity activity = (AppCompatActivity) v.getContext();
                     ProfileFragment fragment = new ProfileFragment();
                     activity.getSupportFragmentManager().beginTransaction().replace(R.id.frame_layout, fragment).addToBackStack(null).commit();

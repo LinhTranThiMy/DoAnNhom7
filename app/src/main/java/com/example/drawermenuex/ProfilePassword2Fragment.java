@@ -1,5 +1,6 @@
 package com.example.drawermenuex;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -64,21 +65,32 @@ public class ProfilePassword2Fragment extends Fragment {
             @Override
             public void onClick(View v) {
                 if(passNew.equals(cfPass)) {
-//                    if (passNew.equals("") || cfPass.equals("")) {
-//                    Toast.makeText(getContext(), "Please enter all fields", Toast.LENGTH_SHORT).show();
-//                    } else {
-                    Boolean updatepass = DB.updatePassword(email,passNew);
-                    if (updatepass == true) {
+                    Boolean checkpasswordupdate = DB.updatePassword(email, passNew);
+                    if (checkpasswordupdate == true) {
+                        Intent intent = new Intent(getContext(), LoginActivity.class);
+                        startActivity(intent);
                         Toast.makeText(getContext(), "Password update successfully", Toast.LENGTH_SHORT).show();
-                        replaceFragment(new ProfileFragment());
-
                     } else {
                         Toast.makeText(getContext(), "Password not update ", Toast.LENGTH_SHORT).show();
                     }
-//                    }
-                } else {
-                    Toast.makeText(getContext(), "Password not match ", Toast.LENGTH_SHORT).show();
                 }
+
+//                if(passNew.equals(cfPass)) {
+////                    if (passNew.equals("") || cfPass.equals("")) {
+////                    Toast.makeText(getContext(), "Please enter all fields", Toast.LENGTH_SHORT).show();
+////                    } else {
+//                    Boolean updatepass = DB.updatePassword(email,passNew);
+//                    if (updatepass == true) {
+//                        Toast.makeText(getContext(), "Password update successfully", Toast.LENGTH_SHORT).show();
+//                        replaceFragment(new ProfileFragment());
+//
+//                    } else {
+//                        Toast.makeText(getContext(), "Password not update ", Toast.LENGTH_SHORT).show();
+//                    }
+////                    }
+//                } else {
+//                    Toast.makeText(getContext(), "Password not match ", Toast.LENGTH_SHORT).show();
+//                }
 
             }
         });

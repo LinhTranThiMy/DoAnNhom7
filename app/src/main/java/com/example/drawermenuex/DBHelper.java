@@ -88,17 +88,23 @@ public class DBHelper extends SQLiteOpenHelper {
             return true;
         }
     }
-    public Boolean updatePassword(String email,String password){
+    public Boolean updatePassword(String email,String password) {
         SQLiteDatabase MyDB=this.getWritableDatabase();
         ContentValues contentValues=new ContentValues();
         contentValues.put("password",password);
-        long result=MyDB.update("users",contentValues,"email = ? ",new  String[]{email});
-        if(result==-1){
-            return  false;
-        }else {
-            return true;
+        Cursor cursor = MyDB.rawQuery("Select * from users where email = ?", new String[]{email});
+        if (cursor.getCount() > 0) {
+            long result = MyDB.update("users", contentValues, "email=?", new String[]{email});
+            if (result == -1) {
+                return false;
+            } else {
+                return true;
+            }
+        } else {
+            return false;
         }
     }
+
     public Boolean checkProfile(String fullname,String username, String email,String password,String confirmpassword, String birthday){
         SQLiteDatabase MyDB=this.getWritableDatabase();
         Cursor cursor=MyDB.rawQuery(" Select * from users where fullname=? and username=? and email=? and password=? and confirmpassword=? and birthday=?",new String[]{fullname,username,email,password,confirmpassword,birthday});

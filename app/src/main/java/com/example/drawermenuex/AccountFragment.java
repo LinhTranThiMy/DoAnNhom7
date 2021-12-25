@@ -20,10 +20,7 @@ import com.example.util.Constant;
 
 public class AccountFragment extends Fragment {
     Button btnProfile,btnPoints,btnMyOrder,btnLogOut;
-    String mPassUser;
-    public AccountFragment(String passUser) {
-        this.mPassUser = passUser;
-    }
+
 
     public AccountFragment() {
     }
@@ -45,7 +42,6 @@ public class AccountFragment extends Fragment {
                 Bundle bundle = getArguments();
                 if(bundle != null) {
                     String key = bundle.getString(USER);
-                    bundle.putSerializable(USER, key);
                     AppCompatActivity activity = (AppCompatActivity) v.getContext();
                     ProfileFragment fragment = new ProfileFragment();
                     activity.getSupportFragmentManager().beginTransaction().replace(R.id.frame_layout, fragment).addToBackStack(null).commit();

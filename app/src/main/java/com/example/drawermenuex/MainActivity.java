@@ -63,8 +63,7 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.account:
                         String key = getIntent().getStringExtra(USER);
                         Bundle bundle = new Bundle();
-                        bundle.putSerializable(USER, key);
-                        AppCompatActivity activity = (AppCompatActivity) MainActivity.this;
+                        AppCompatActivity activity =  MainActivity.this;
                         AccountFragment fragment = new AccountFragment();
                         activity.getSupportFragmentManager().beginTransaction().replace(R.id.frame_layout, fragment).addToBackStack(null).commit();
                         bundle.putSerializable(USER, key);

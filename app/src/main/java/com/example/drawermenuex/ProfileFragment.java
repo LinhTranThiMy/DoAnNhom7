@@ -14,6 +14,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 import com.example.model.Product;
 import com.example.util.Constant;
@@ -22,11 +23,7 @@ import com.example.util.Constant;
 public class ProfileFragment extends Fragment {
     Button btnMyAccount,btnPassword;
     ImageButton btnBackProfile;
-    String mPassUser;
 
-    public ProfileFragment(String passUser) {
-        this.mPassUser = passUser;
-    }
     public ProfileFragment() {
     }
 
@@ -53,6 +50,8 @@ public class ProfileFragment extends Fragment {
                     activity.getSupportFragmentManager().beginTransaction().replace(R.id.frame_layout,fragment).addToBackStack(null).commit();
                     bundle.putSerializable(USER, key);
                     fragment.setArguments(bundle);
+                }else {
+                    Toast.makeText(getContext(), "Error data", Toast.LENGTH_SHORT).show();
                 }
 
 //                Intent intent= new Intent(getContext(),ProfileMyAccount1.class);
@@ -66,7 +65,6 @@ public class ProfileFragment extends Fragment {
                 Bundle bundle = getArguments();
                 if(bundle != null) {
                     String key = bundle.getString(USER);
-                    bundle.putSerializable(USER, key);
                     AppCompatActivity activity = (AppCompatActivity) v.getContext();
                     ProfilePassword1Fragment fragment = new ProfilePassword1Fragment();
                     activity.getSupportFragmentManager().beginTransaction().replace(R.id.frame_layout, fragment).addToBackStack(null).commit();
@@ -81,7 +79,6 @@ public class ProfileFragment extends Fragment {
                 Bundle bundle = getArguments();
                 if(bundle != null) {
                     String key = bundle.getString(USER);
-                    bundle.putSerializable(USER, key);
                     AppCompatActivity activity = (AppCompatActivity) v.getContext();
                     AccountFragment fragment = new AccountFragment();
                     activity.getSupportFragmentManager().beginTransaction().replace(R.id.frame_layout, fragment).addToBackStack(null).commit();
